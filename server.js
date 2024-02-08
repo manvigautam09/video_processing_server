@@ -14,6 +14,10 @@ app.get("/", (req, res) => {
 
 let db = {};
 
+async function wait() {
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+}
+
 async function saveFramesToVideo(frames, frameRate) {
   const fs = require("fs");
   const { execSync } = require("child_process");
@@ -37,11 +41,10 @@ async function saveFramesToVideo(frames, frameRate) {
   fs.rmdirSync(frameDir, { recursive: true });
 }
 
-async function captureAnimation(url, duration) {
+async function captureAnimation(url, duration, id) {
   // Launch the browser and open a new blank page
   const browser = await puppeteer.launch({
-    // headless: false,
-    // devtools: true,
+    headless: false,
   });
   const page = await browser.newPage();
 
@@ -53,27 +56,38 @@ async function captureAnimation(url, duration) {
 
   const searchResultSelector = "#record-video-button";
   const element = await page.waitForSelector(searchResultSelector);
-  console.log("### element", element);
+  // console.log("### element", element);
   await element.click();
   await new Promise((resolve) => setTimeout(resolve, duration * 1000));
-  await new Promise((resolve) => setTimeout(resolve, 3000));
-  // console.log("#### enters here");
+  await new Promise((resolve) => setTimeout(resolve, 10000));
+  const intervalId = setInterval(() => wait(), 1000);
+
+  if (db[id] === true) {
+    clearInterval(intervalId);
+  }
+
+  console.log("#### record video execution completed. Browser will now close");
   await browser.close();
 }
 
 app.post("/record-video", async (req, res) => {
-  const { videoDuration } = req.query;
-  console.log("### req here", req.body);
+  const { videoDuration, id, framePerSecond } = req.body;
+  console.log("### req in record-video", req.body);
+  db[id] = false;
 
-  await captureAnimation("http://localhost:3000/", videoDuration); // URL and duration in milliseconds
+  await captureAnimation(
+    `http://localhost:3000/?duration=${videoDuration}?fps=${framePerSecond}?videoId=${id}`,
+    videoDuration,
+    id
+  );
 
-  console.log("### req end here");
+  console.log("### record-video req ends here");
   res.status(200).send("Recording started");
 });
 
 app.post("/make-video", async (req, res) => {
-  console.log("#### make-video", req.body);
-  const { videoDuration, framePerSecond, framesData } = req.body;
+  console.log("#### req in make-video", req.body);
+  const { videoDuration, framePerSecond, framesData, videoId } = req.body;
 
   let frames = [];
   const secondsArray = Object.keys(framesData);
