@@ -1,7 +1,10 @@
 const express = require("express");
 const cors = require("cors");
 const puppeteer = require("puppeteer");
+const multer = require("multer");
 const app = express();
+const fs = require("fs");
+
 const port = 3005;
 
 app.use(express.json());
@@ -11,6 +14,8 @@ app.use(cors());
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
+
+const upload = multer({ dest: "uploads/" });
 
 let db = {};
 
@@ -30,7 +35,7 @@ async function saveFramesToVideo(frames, frameRate) {
 
   // Use FFmpeg to create a video from the frames
   execSync(
-    `ffmpeg -framerate ${frameRate} -i ${frameDir}/frame-%d.png -c:v libx264 -r 30 -pix_fmt yuv420p output.mp4`
+    `ffmpeg -framerate ${frameRate} -i ${frameDir}/frame-%d.png -c:v libx264 -r 30 -pix_fmt yuv420p public/output.mp4`
   );
 
   // Optionally, clean up frames
@@ -39,9 +44,7 @@ async function saveFramesToVideo(frames, frameRate) {
 
 async function captureAnimation(url, duration, id) {
   // Launch the browser and open a new blank page
-  const browser = await puppeteer.launch({
-    headless: false,
-  });
+  const browser = await puppeteer.launch();
   const page = await browser.newPage();
 
   // Navigate the page to a URL
@@ -84,31 +87,30 @@ app.post("/record-video", async (req, res) => {
   res.status(200).send("Recording started");
 });
 
-app.post("/make-video", async (req, res) => {
-  console.log("#### req in make-video", req.body);
-  // const { videoDuration, framePerSecond, framesData, videoId } = req.body;
+app.post("/make-video", upload.array("files"), async (req, res) => {
+  const { videoDuration, framePerSecond, framesData, videoId } = req.query;
 
   let frames = [];
-  // const secondsArray = Object.keys(framesData);
-  // for (var i = 0; i < secondsArray.length; i++) {
-  //   const milliFramesArray = Object.keys(framesData[secondsArray[i]]);
-  //   console.log("### milliFramesArray", milliFramesArray);
 
-  //   for (var j = 0; j < milliFramesArray.length; j++) {
-  //     console.log("### j", milliFramesArray[j]);
-  //     const blob = framesData[secondsArray[i]][milliFramesArray[j]];
-  //     console.log("### blob", blob);
-  //     const reader = new FileReader();
-  //     const res = reader.readAsArrayBuffer(blob);
-  //     console.log("### res", res);
-  //     const buf = await blob.arrayBuffer();
-  //     console.log("### buf", buf);
-  //     frames.push(milliFramesArray[j]);
-  //   }
-  // }
+  for (let i = 0; i < req.files.length; i++) {
+    const file = req.files[i];
 
-  // db[videoId] = true;
-  //frameRate = framePerSecond;
+    const imgData = await new Promise((res, rej) => {
+      fs.readFile(file.path, (err, buffer) => {
+        if (err) {
+          rej(err);
+        }
+
+        res(buffer);
+      });
+    });
+
+    frames.push(imgData);
+  }
+
+  saveFramesToVideo(frames, framePerSecond);
+
+  db[videoId] = true;
 });
 
 app.listen(port, () => {
