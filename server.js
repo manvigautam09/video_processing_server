@@ -14,10 +14,6 @@ app.get("/", (req, res) => {
 
 let db = {};
 
-async function wait() {
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-}
-
 async function saveFramesToVideo(frames, frameRate) {
   const fs = require("fs");
   const { execSync } = require("child_process");
@@ -59,12 +55,15 @@ async function captureAnimation(url, duration, id) {
   // console.log("### element", element);
   await element.click();
   await new Promise((resolve) => setTimeout(resolve, duration * 1000));
-  await new Promise((resolve) => setTimeout(resolve, 10000));
-  const intervalId = setInterval(() => wait(), 1000);
 
-  if (db[id] === true) {
-    clearInterval(intervalId);
-  }
+  await new Promise((resolve) => {
+    const intervalId = setInterval(() => {
+      if (db[id] === true) {
+        resolve();
+        clearInterval(intervalId);
+      }
+    }, 1000);
+  });
 
   console.log("#### record video execution completed. Browser will now close");
   await browser.close();
@@ -87,23 +86,28 @@ app.post("/record-video", async (req, res) => {
 
 app.post("/make-video", async (req, res) => {
   console.log("#### req in make-video", req.body);
-  const { videoDuration, framePerSecond, framesData, videoId } = req.body;
+  // const { videoDuration, framePerSecond, framesData, videoId } = req.body;
 
   let frames = [];
-  const secondsArray = Object.keys(framesData);
-  for (var i = 0; i < secondsArray.length; i++) {
-    const milliFramesArray = Object.keys(framesData[secondsArray[i]]);
-    // console.log("### milliFramesArray", milliFramesArray);
+  // const secondsArray = Object.keys(framesData);
+  // for (var i = 0; i < secondsArray.length; i++) {
+  //   const milliFramesArray = Object.keys(framesData[secondsArray[i]]);
+  //   console.log("### milliFramesArray", milliFramesArray);
 
-    for (var j = 0; j < milliFramesArray.length; j++) {
-      // console.log("### j", milliFramesArray[j]);
-      const blob = framesData[secondsArray[i]][milliFramesArray[j]];
-      // console.log("### blob", blob);
-      // const buf = await blob.arrayBuffer();
-      // console.log("### buf", buf);
-      // frames.push(milliFramesArray[j]);
-    }
-  }
+  //   for (var j = 0; j < milliFramesArray.length; j++) {
+  //     console.log("### j", milliFramesArray[j]);
+  //     const blob = framesData[secondsArray[i]][milliFramesArray[j]];
+  //     console.log("### blob", blob);
+  //     const reader = new FileReader();
+  //     const res = reader.readAsArrayBuffer(blob);
+  //     console.log("### res", res);
+  //     const buf = await blob.arrayBuffer();
+  //     console.log("### buf", buf);
+  //     frames.push(milliFramesArray[j]);
+  //   }
+  // }
+
+  // db[videoId] = true;
   //frameRate = framePerSecond;
 });
 
