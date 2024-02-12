@@ -4,6 +4,7 @@ const puppeteer = require("puppeteer");
 const multer = require("multer");
 const app = express();
 const fs = require("fs");
+const path = require("path");
 
 const port = 3005;
 
@@ -111,6 +112,27 @@ app.post("/make-video", upload.array("files"), async (req, res) => {
   saveFramesToVideo(frames, framePerSecond);
 
   db[videoId] = true;
+});
+
+// Route to serve JSON file
+app.get("/json-data", (req, res) => {
+  const filePath = path.join(__dirname, "./public/lottie-animation.json"); // Replace with the path to your JSON file
+
+  fs.readFile(filePath, "utf8", (err, data) => {
+    if (err) {
+      // Error handling
+      res.status(500).send("Error reading the JSON file");
+      return;
+    }
+
+    // Parse JSON data and send as response
+    try {
+      const jsonData = JSON.parse(data);
+      res.json(jsonData);
+    } catch (parseError) {
+      res.status(500).send("Error parsing JSON data");
+    }
+  });
 });
 
 app.listen(port, () => {
