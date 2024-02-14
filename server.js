@@ -6,6 +6,24 @@ const app = express();
 const fs = require("fs");
 const path = require("path");
 
+function base64ToArrayBuffer(base64) {
+  // Create a buffer from the Base64 string
+  const buffer = Buffer.from(base64, "base64");
+
+  // Create an ArrayBuffer with the same length as the buffer
+  const arrayBuffer = new ArrayBuffer(buffer.length);
+
+  // Create a view for the ArrayBuffer
+  const view = new Uint8Array(arrayBuffer);
+
+  // Copy the buffer into the ArrayBuffer view
+  for (let i = 0; i < buffer.length; ++i) {
+    view[i] = buffer[i];
+  }
+
+  return arrayBuffer;
+}
+
 const port = 3005;
 
 app.use(express.json());
@@ -56,9 +74,30 @@ async function captureAnimation(url, duration, id) {
 
   const searchResultSelector = "#record-video-button";
   const element = await page.waitForSelector(searchResultSelector);
-  // console.log("### element", element);
   await element.click();
   await new Promise((resolve) => setTimeout(resolve, duration * 1000));
+
+  const selector = `#id-${id}`;
+  const videoRecordedDiv = await page.waitForSelector(selector);
+  const textContent = await videoRecordedDiv.evaluate((node) => node.innerText);
+  console.log("### textContent", textContent);
+
+  if (textContent === "Video recorded") {
+    const framesSelector = "#frames-list li";
+
+    const liTexts = await page.$$eval(framesSelector, (liElements) =>
+      liElements.map((li) => ({ url: li.textContent.trim(), id: li.id }))
+    );
+
+    let frames = [];
+    for (var i = 0; i < liTexts.length; i++) {
+      let buffer = base64ToArrayBuffer(liTexts[i].url);
+      console.log("### buffer", buffer);
+
+      frames.push(imgData);
+    }
+    console.log("### frames", frames);
+  }
 
   await new Promise((resolve) => {
     const intervalId = setInterval(() => {
