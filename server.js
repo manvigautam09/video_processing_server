@@ -6,24 +6,6 @@ const app = express();
 const fs = require("fs");
 const path = require("path");
 
-function base64ToArrayBuffer(base64) {
-  // Create a buffer from the Base64 string
-  const buffer = Buffer.from(base64, "base64");
-
-  // Create an ArrayBuffer with the same length as the buffer
-  const arrayBuffer = new ArrayBuffer(buffer.length);
-
-  // Create a view for the ArrayBuffer
-  const view = new Uint8Array(arrayBuffer);
-
-  // Copy the buffer into the ArrayBuffer view
-  for (let i = 0; i < buffer.length; ++i) {
-    view[i] = buffer[i];
-  }
-
-  return arrayBuffer;
-}
-
 const port = 3005;
 
 app.use(express.json());
@@ -38,7 +20,14 @@ const upload = multer({ dest: "uploads/" });
 
 let db = {};
 
-async function saveFramesToVideo(frames, frameRate) {
+function base64ToArrayBuffer(base64) {
+  const base64Data = base64.replace(/^data:image\/png;base64,/, "");
+  const buffer = Buffer.from(base64Data, "base64");
+
+  return buffer;
+}
+
+async function saveFramesToVideo(frames, frameRate, videoId) {
   const fs = require("fs");
   const { execSync } = require("child_process");
 
@@ -59,9 +48,10 @@ async function saveFramesToVideo(frames, frameRate) {
 
   // Optionally, clean up frames
   fs.rmdirSync(frameDir, { recursive: true });
+  db[videoId] = true;
 }
 
-async function captureAnimation(url, duration, id) {
+async function captureAnimation(url, duration, id, framePerSecond) {
   // Launch the browser and open a new blank page
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
@@ -75,7 +65,6 @@ async function captureAnimation(url, duration, id) {
   const searchResultSelector = "#record-video-button";
   const element = await page.waitForSelector(searchResultSelector);
   await element.click();
-  await new Promise((resolve) => setTimeout(resolve, duration * 1000));
 
   const selector = `#id-${id}`;
   const videoRecordedDiv = await page.waitForSelector(selector);
@@ -92,21 +81,12 @@ async function captureAnimation(url, duration, id) {
     let frames = [];
     for (var i = 0; i < liTexts.length; i++) {
       let buffer = base64ToArrayBuffer(liTexts[i].url);
-      console.log("### buffer", buffer);
-
-      frames.push(imgData);
+      frames.push(buffer);
     }
-    console.log("### frames", frames);
-  }
+    console.log("### length", frames.length);
 
-  await new Promise((resolve) => {
-    const intervalId = setInterval(() => {
-      if (db[id] === true) {
-        resolve();
-        clearInterval(intervalId);
-      }
-    }, 1000);
-  });
+    saveFramesToVideo(frames, framePerSecond, id);
+  }
 
   console.log("#### record video execution completed. Browser will now close");
   await browser.close();
@@ -120,7 +100,8 @@ app.post("/record-video", async (req, res) => {
   await captureAnimation(
     `http://localhost:3000/?duration=${videoDuration}?fps=${framePerSecond}?videoId=${id}`,
     videoDuration,
-    id
+    id,
+    framePerSecond
   );
 
   console.log("### record-video req ends here");
