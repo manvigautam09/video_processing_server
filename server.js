@@ -108,32 +108,6 @@ app.post("/record-video", async (req, res) => {
   res.status(200).send("Recording started");
 });
 
-app.post("/make-video", upload.array("files"), async (req, res) => {
-  const { videoDuration, framePerSecond, framesData, videoId } = req.query;
-
-  let frames = [];
-
-  for (let i = 0; i < req.files.length; i++) {
-    const file = req.files[i];
-
-    const imgData = await new Promise((res, rej) => {
-      fs.readFile(file.path, (err, buffer) => {
-        if (err) {
-          rej(err);
-        }
-
-        res(buffer);
-      });
-    });
-
-    frames.push(imgData);
-  }
-
-  saveFramesToVideo(frames, framePerSecond);
-
-  db[videoId] = true;
-});
-
 // Route to serve JSON file
 app.get("/json-data", (req, res) => {
   const filePath = path.join(__dirname, "./public/lottie-animation.json"); // Replace with the path to your JSON file
