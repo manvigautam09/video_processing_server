@@ -129,6 +129,28 @@ app.get("/json-data", (req, res) => {
   });
 });
 
+app.get("/pixi-slide.json", (req, res) => {
+  const { slideNum } = req.body;
+  // Replace the code below with your logic to return the JSON file based on slideNum
+  const filePath = path.join(__dirname, `./slides/slide_${slideNum}.json`);
+
+  fs.readFile(filePath, "utf8", (err, data) => {
+    if (err) {
+      // Error handling
+      res.status(500).send("Error reading the JSON file");
+      return;
+    }
+
+    // Parse JSON data and send as response
+    try {
+      const jsonData = JSON.parse(data);
+      res.json(jsonData);
+    } catch (parseError) {
+      res.status(500).send("Error parsing JSON data");
+    }
+  });
+});
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });

@@ -1,0 +1,63 @@
+{
+  "type": "image",
+  "id": "slide_1",
+  "asset": "../slides/assets/slide2.jpg",
+  "text": [
+    {
+      "id": "slide_1-text_1",
+      "title": "Hello World",
+      "rotate": 45,
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "color": "red",
+      "family": "monospace",
+
+      "size": 20,
+      "weight": 800
+    },
+    {
+      "id": "slide_2-text_2",
+      "title": "Make Videos",
+      "rotate": 45,
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "color": "red",
+      "family": "monospace",
+
+      "size": 20,
+      "weight": 800
+    },
+    {
+      "id": "slide_3-text_3",
+      "title": "Using React Pix",
+      "rotate": 45,
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "color": "red",
+      "family": "monospace",
+
+      "size": 20,
+      "weight": 800
+    },
+    {
+      "id": "slide_4-text_4",
+      "title": "Learn To",
+      "rotate": 45,
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "color": "red",
+      "family": "monospace",
+
+      "size": 20,
+      "weight": 800
+    }
+  ]
+}
