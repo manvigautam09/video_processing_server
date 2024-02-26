@@ -129,9 +129,9 @@ app.get("/json-data", (req, res) => {
   });
 });
 
-app.get("/pixi-slide.json", (req, res) => {
-  const { slideNum } = req.body;
-  // Replace the code below with your logic to return the JSON file based on slideNum
+app.get("/pixi-slide", (req, res) => {
+  const { slideNum } = req.query;
+
   const filePath = path.join(__dirname, `./slides/slide_${slideNum}.json`);
 
   fs.readFile(filePath, "utf8", (err, data) => {

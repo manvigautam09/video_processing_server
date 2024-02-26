@@ -18,7 +18,7 @@
       "weight": 800
     },
     {
-      "id": "slide_2-text_2",
+      "id": "slide_1-text_2",
       "title": "Make Videos",
       "rotate": 45,
       "position": {
@@ -32,7 +32,7 @@
       "weight": 800
     },
     {
-      "id": "slide_3-text_3",
+      "id": "slide_1-text_3",
       "title": "Using React Pix",
       "rotate": 45,
       "position": {
@@ -46,7 +46,7 @@
       "weight": 800
     },
     {
-      "id": "slide_4-text_4",
+      "id": "slide_1-text_4",
       "title": "Learn To",
       "rotate": 45,
       "position": {

@@ -1,10 +1,10 @@
 {
   "type": "image",
-  "id": "slide_1",
+  "id": "slide_2",
   "asset": "../slides/assets/slide2.jpg",
   "text": [
     {
-      "id": "slide_1-text_1",
+      "id": "slide_2-text_1",
       "title": "Hello World",
       "rotate": 45,
       "position": {
@@ -32,7 +32,7 @@
       "weight": 800
     },
     {
-      "id": "slide_3-text_3",
+      "id": "slide_2-text_3",
       "title": "Using React Pix",
       "rotate": 45,
       "position": {
@@ -46,7 +46,7 @@
       "weight": 800
     },
     {
-      "id": "slide_4-text_4",
+      "id": "slide_2-text_4",
       "title": "Learn To",
       "rotate": 45,
       "position": {
