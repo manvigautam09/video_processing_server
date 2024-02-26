@@ -1,7 +1,8 @@
 {
   "type": "image",
   "id": "slide_1",
-  "asset": "../slides/assets/slide1.jpg",
+  "asset": "slide1.jpg",
+  "time": 4,
   "text": [
     {
       "id": "slide_1-text_1",

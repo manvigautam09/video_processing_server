@@ -151,6 +151,22 @@ app.get("/pixi-slide", (req, res) => {
   });
 });
 
+app.get("/slide-image", (req, res) => {
+  const { name } = req.query;
+  const imagePath = path.join(__dirname, `./slides/assets/${name}`);
+
+  fs.readFile(imagePath, (err, data) => {
+    if (err) {
+      // Error handling
+      res.status(500).send("Error reading the image file");
+      return;
+    }
+
+    res.writeHead(200, { "Content-Type": "image/jpeg" });
+    res.end(data);
+  });
+});
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
