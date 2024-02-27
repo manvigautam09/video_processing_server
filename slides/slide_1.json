@@ -12,11 +12,12 @@
         "x": 10,
         "y": 20
       },
-      "color": "red",
-      "family": "monospace",
-
-      "size": 20,
-      "weight": "800"
+      "style": {
+        "color": "red",
+        "family": "monospace",
+        "size": 20,
+        "weight": "800"
+      }
     },
     {
       "id": "slide_1-text_2",
@@ -26,10 +27,12 @@
         "x": 10,
         "y": 60
       },
-      "color": "red",
-      "family": "monospace",
-      "size": 20,
-      "weight": "800"
+      "style": {
+        "color": "red",
+        "family": "monospace",
+        "size": 20,
+        "weight": "800"
+      }
     },
     {
       "id": "slide_1-text_3",
@@ -39,11 +42,12 @@
         "x": 10,
         "y": 80
       },
-      "color": "red",
-      "family": "monospace",
-
-      "size": 20,
-      "weight": "800"
+      "style": {
+        "color": "red",
+        "family": "monospace",
+        "size": 20,
+        "weight": "800"
+      }
     },
     {
       "id": "slide_1-text_4",
@@ -53,11 +57,12 @@
         "x": 10,
         "y": 40
       },
-      "color": "red",
-      "family": "monospace",
-
-      "size": 20,
-      "weight": "800"
+      "style": {
+        "color": "red",
+        "family": "monospace",
+        "size": 20,
+        "weight": "800"
+      }
     }
   ]
 }
