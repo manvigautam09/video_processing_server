@@ -1,11 +1,11 @@
 {
   "type": "image",
-  "id": "slide_1",
+  "id": "slide_2",
   "asset": "slide1.jpg",
   "time": 4,
   "text": [
     {
-      "id": "slide_1-text_1",
+      "id": "slide_2-text_1",
       "title": "Hello World",
       "rotate": -5,
       "position": {
@@ -20,7 +20,7 @@
       }
     },
     {
-      "id": "slide_1-text_2",
+      "id": "slide_2-text_2",
       "title": "Make Videos",
       "rotate": -5,
       "position": {
@@ -35,7 +35,7 @@
       }
     },
     {
-      "id": "slide_1-text_3",
+      "id": "slide_2-text_3",
       "title": "Using React Pixi",
       "rotate": -5,
       "position": {
@@ -50,7 +50,7 @@
       }
     },
     {
-      "id": "slide_1-text_4",
+      "id": "slide_2-text_4",
       "title": "Learn To",
       "rotate": -5,
       "position": {
