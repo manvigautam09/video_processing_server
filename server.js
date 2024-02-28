@@ -100,7 +100,7 @@ app.post("/record-video", async (req, res) => {
   db[id] = false;
 
   await captureAnimation(
-    `http://localhost:3000/test_app?duration=${videoDuration}?fps=${framePerSecond}?videoId=${id}`,
+    `http://localhost:3000/?duration=${videoDuration}?fps=${framePerSecond}?videoId=${id}`,
     videoDuration,
     id,
     framePerSecond
