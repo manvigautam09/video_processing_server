@@ -43,7 +43,7 @@ async function saveFramesToVideo(frames, frameRate, videoId) {
 
   // Use FFmpeg to create a video from the frames
   execSync(
-    `ffmpeg -framerate ${frameRate} -i ${frameDir}/frame-%d.png -c:v libx264 -r 30 -pix_fmt yuv420p public/output.mp4`
+    `ffmpeg -framerate ${frameRate} -i ${frameDir}/frame-%d.png -c:v libx264 -r 30 -pix_fmt yuv420p public/output_${videoId}.mp4`
   );
 
   // Optionally, clean up frames
@@ -53,7 +53,9 @@ async function saveFramesToVideo(frames, frameRate, videoId) {
 
 async function captureAnimation(url, duration, id, framePerSecond) {
   // Launch the browser and open a new blank page
-  const browser = await puppeteer.launch();
+  const browser = await puppeteer.launch({
+    headless: false,
+  });
   const page = await browser.newPage();
 
   // Navigate the page to a URL
@@ -98,7 +100,7 @@ app.post("/record-video", async (req, res) => {
   db[id] = false;
 
   await captureAnimation(
-    `http://localhost:3000/?duration=${videoDuration}?fps=${framePerSecond}?videoId=${id}`,
+    `http://localhost:3000/test_app?duration=${videoDuration}?fps=${framePerSecond}?videoId=${id}`,
     videoDuration,
     id,
     framePerSecond
