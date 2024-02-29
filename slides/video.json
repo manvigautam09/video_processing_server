@@ -15,7 +15,7 @@
         {
           "type": "text",
           "id": "slide_1-text_1",
-          "title": "Hi I am Text",
+          "title": "Layer 1",
           "rotate": -5,
           "position": {
             "x": 10,
@@ -29,6 +29,72 @@
           },
           "style": {
             "fill": "black",
+            "family": "monospace",
+            "size": 20,
+            "weight": "800"
+          }
+        },
+        {
+          "type": "text",
+          "id": "slide_1-text_2",
+          "title": "Layer 2",
+          "rotate": -5,
+          "position": {
+            "x": 10,
+            "y": 40
+          },
+          "transition": {
+            "duration": 2,
+            "enter": "fade",
+            "exit": "fade",
+            "direction": "left"
+          },
+          "style": {
+            "fill": "red",
+            "family": "monospace",
+            "size": 20,
+            "weight": "800"
+          }
+        },
+        {
+          "type": "text",
+          "id": "slide_1-text_3",
+          "title": "Layer 3",
+          "rotate": -5,
+          "position": {
+            "x": 10,
+            "y": 60
+          },
+          "transition": {
+            "duration": 2,
+            "enter": "fade",
+            "exit": "fade",
+            "direction": "left"
+          },
+          "style": {
+            "fill": "blue",
+            "family": "monospace",
+            "size": 20,
+            "weight": "800"
+          }
+        },
+        {
+          "type": "text",
+          "id": "slide_1-text_4",
+          "title": "Layer 4",
+          "rotate": -5,
+          "position": {
+            "x": 10,
+            "y": 80
+          },
+          "transition": {
+            "duration": 2,
+            "enter": "fade",
+            "exit": "fade",
+            "direction": "left"
+          },
+          "style": {
+            "fill": "yellow",
             "family": "monospace",
             "size": 20,
             "weight": "800"
