@@ -6,14 +6,14 @@
   "text": [
     {
       "id": "slide_1-text_1",
-      "title": "Hello World",
+      "title": "Layer 1",
       "rotate": -5,
       "position": {
         "x": 10,
         "y": 20
       },
       "style": {
-        "color": "red",
+        "fill": "black",
         "family": "monospace",
         "size": 20,
         "weight": "800"
@@ -21,14 +21,14 @@
     },
     {
       "id": "slide_1-text_2",
-      "title": "Make Videos",
+      "title": "Layer 2",
       "rotate": -5,
       "position": {
         "x": 10,
-        "y": 60
+        "y": 40
       },
       "style": {
-        "color": "red",
+        "fill": "red",
         "family": "monospace",
         "size": 20,
         "weight": "800"
@@ -36,14 +36,14 @@
     },
     {
       "id": "slide_1-text_3",
-      "title": "Using React Pixi",
+      "title": "Layer 3",
       "rotate": -5,
       "position": {
         "x": 10,
-        "y": 80
+        "y": 60
       },
       "style": {
-        "color": "red",
+        "fill": "blue",
         "family": "monospace",
         "size": 20,
         "weight": "800"
@@ -51,14 +51,14 @@
     },
     {
       "id": "slide_1-text_4",
-      "title": "Learn To",
+      "title": "Layer 4",
       "rotate": -5,
       "position": {
         "x": 10,
-        "y": 40
+        "y": 80
       },
       "style": {
-        "color": "red",
+        "fill": "yellow",
         "family": "monospace",
         "size": 20,
         "weight": "800"
