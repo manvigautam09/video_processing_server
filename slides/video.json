@@ -1,0 +1,66 @@
+{
+  "id": "video_1",
+  "aspectRatio": "16:9",
+  "thumbnail": "flower.png",
+  "slides": [
+    {
+      "id": "slide_1",
+      "background": {
+        "type": "image",
+        "imageUrl": "http://localhost:3005/slide-image?name=flower.png",
+        "videoUrl": "",
+        "hexCode": ""
+      },
+      "layers": [
+        {
+          "type": "text",
+          "id": "slide_1-text_1",
+          "title": "Hi I am Text",
+          "rotate": -5,
+          "position": {
+            "x": 10,
+            "y": 20
+          },
+          "transition": {
+            "duration": 2,
+            "enter": "fade",
+            "exit": "fade",
+            "direction": "left"
+          },
+          "style": {
+            "fill": "black",
+            "family": "monospace",
+            "size": 20,
+            "weight": "800"
+          }
+        }
+      ],
+      "audio": {
+        "url": "https://cdn.transistor.fm/file/transistor/m/shows/20384/c698e69111b441535b74bb6fde4687b0.mp3",
+        "duration": 5,
+        "showCaptions": false,
+        "captions": "",
+        "volume": 1
+      },
+      "transition": {
+        "duration": 2,
+        "enter": "fade",
+        "exit": "fade",
+        "direction": "left"
+      }
+    }
+  ],
+  "audio": {
+    "url": "https://cdn.transistor.fm/file/transistor/m/shows/20384/c698e69111b441535b74bb6fde4687b0.mp3",
+    "duration": 4,
+    "showCaptions": false,
+    "captions": "",
+    "volume": 1
+  },
+  "transition": {
+    "duration": 2,
+    "enter": "fade",
+    "exit": "fade",
+    "direction": "left"
+  }
+}
