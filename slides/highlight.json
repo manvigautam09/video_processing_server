@@ -1,0 +1,64 @@
+{
+  "aspectRatio": "16:9",
+  "transition_start": "fade | slide | zoom | flip",
+  "transition_end": "fade | slide | zoom | flip",
+  "thumbnail": "https://s3.amazonaws.com/learn-hack-reactor/lecture-audio/2016-07-18-React-Components-Part-1.mp3",
+  "slides": [
+    {
+      "background": {
+        "type": "image | video | color",
+        "imageUrl": "",
+        "videoUrl": "",
+        "hexCode": "#fff00"
+      },
+      "layers": [
+        {
+          "type": "text",
+          "id": "slide_1-text_1",
+          "title": "Layer 1",
+          "rotate": -5,
+          "position": {
+            "x": 10,
+            "y": 20
+          },
+          "style": {
+            "fill": "black",
+            "family": "monospace",
+            "size": 20,
+            "weight": "800"
+          }
+        },
+        {
+          "type": "image",
+          "id": "slide_1-image_1",
+          "rotate": -5,
+          "position": {
+            "x": 10,
+            "y": 20
+          },
+          "style": {
+            "width": 100,
+            "height": 100,
+            "objectFit": "cover"
+          }
+        }
+      ],
+      "audio": {
+        "url": "https://s3.amazonaws.com/learn-hack-reactor/lecture-audio/2016-07-18-React-Components-Part-1.mp3",
+        "duration": "1:00:00",
+        "showCaptions": false,
+        "captions": "https://s3.amazonaws.com/learn-hack-reactor/lecture-audio/2016-07-18-React-Components-Part-1.vtt",
+        "volume": 1
+      },
+      "transition_start": "fade | slide | zoom | flip",
+      "transition_end": "fade | slide | zoom | flip"
+    }
+  ],
+  "audio": {
+    "url": "https://s3.amazonaws.com/learn-hack-reactor/lecture-audio/2016-07-18-React-Components-Part-1.mp3",
+    "duration": "1:00:00",
+    "showCaptions": false,
+    "captions": "https://s3.amazonaws.com/learn-hack-reactor/lecture-audio/2016-07-18-React-Components-Part-1.vtt",
+    "volume": 1
+  }
+}
