@@ -1,10 +1,10 @@
 {
-  "aspectRatio": "16:9",
-  "transition_start": "fade | slide | zoom | flip",
-  "transition_end": "fade | slide | zoom | flip",
-  "thumbnail": "https://s3.amazonaws.com/learn-hack-reactor/lecture-audio/2016-07-18-React-Components-Part-1.mp3",
+  "id": "video_1",
+  "aspectRatio": "16:9 | 1:1 | 4:5 | 9:16",
+  "thumbnail": "flower.png",
   "slides": [
     {
+      "id": "slide_1",
       "background": {
         "type": "image | video | color",
         "imageUrl": "",
@@ -21,6 +21,12 @@
             "x": 10,
             "y": 20
           },
+          "transition": {
+            "duration": 2,
+            "enter": "fade",
+            "exit": "fade",
+            "direction": "left | right | up | down"
+          },
           "style": {
             "fill": "black",
             "family": "monospace",
@@ -31,6 +37,7 @@
         {
           "type": "image",
           "id": "slide_1-image_1",
+          "url": "",
           "rotate": -5,
           "position": {
             "x": 10,
@@ -41,24 +48,48 @@
             "height": 100,
             "objectFit": "cover"
           }
+        },
+        {
+          "type": "sticker",
+          "id": "slide_1-sticker_1",
+          "url": "",
+          "rotate": -5,
+          "position": {
+            "x": 10,
+            "y": 20
+          },
+          "animation": {
+            "type": "bounce | shake | rotate | flip",
+            "duration": 2
+          }
         }
       ],
       "audio": {
         "url": "https://s3.amazonaws.com/learn-hack-reactor/lecture-audio/2016-07-18-React-Components-Part-1.mp3",
-        "duration": "1:00:00",
+        "duration": 5,
         "showCaptions": false,
         "captions": "https://s3.amazonaws.com/learn-hack-reactor/lecture-audio/2016-07-18-React-Components-Part-1.vtt",
         "volume": 1
       },
-      "transition_start": "fade | slide | zoom | flip",
-      "transition_end": "fade | slide | zoom | flip"
+      "transition": {
+        "duration": 2,
+        "enter": "fade",
+        "exit": "fade",
+        "direction": "left | right | up | down"
+      }
     }
   ],
   "audio": {
     "url": "https://s3.amazonaws.com/learn-hack-reactor/lecture-audio/2016-07-18-React-Components-Part-1.mp3",
-    "duration": "1:00:00",
+    "duration": 4,
     "showCaptions": false,
     "captions": "https://s3.amazonaws.com/learn-hack-reactor/lecture-audio/2016-07-18-React-Components-Part-1.vtt",
     "volume": 1
+  },
+  "transition": {
+    "duration": 2,
+    "enter": "fade",
+    "exit": "fade",
+    "direction": "left | right | up | down"
   }
 }
