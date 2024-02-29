@@ -153,6 +153,26 @@ app.get("/pixi-slide", (req, res) => {
   });
 });
 
+app.get("/pixi_video", (req, res) => {
+  const filePath = path.join(__dirname, `./slides/video.json`);
+
+  fs.readFile(filePath, "utf8", (err, data) => {
+    if (err) {
+      // Error handling
+      res.status(500).send("Error reading the JSON file");
+      return;
+    }
+
+    // Parse JSON data and send as response
+    try {
+      const jsonData = JSON.parse(data);
+      res.json(jsonData);
+    } catch (parseError) {
+      res.status(500).send("Error parsing JSON data");
+    }
+  });
+});
+
 app.get("/slide-image", (req, res) => {
   const { name } = req.query;
   const imagePath = path.join(__dirname, `./slides/assets/${name}`);
@@ -164,7 +184,7 @@ app.get("/slide-image", (req, res) => {
       return;
     }
 
-    res.writeHead(200, { "Content-Type": "image/jpeg" });
+    res.writeHead(200, { "Content-Type": "image/png" });
     res.end(data);
   });
 });
