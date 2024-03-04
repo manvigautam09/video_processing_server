@@ -5,6 +5,7 @@
   "slides": [
     {
       "id": "slide_1",
+      "duration": 5,
       "background": {
         "type": "image",
         "imageUrl": "http://localhost:3005/slide-image?name=flower.png",
@@ -32,7 +33,9 @@
             "family": "monospace",
             "size": 20,
             "weight": "800"
-          }
+          },
+          "startTime": 2,
+          "endTime": 4
         },
         {
           "type": "text",
@@ -54,7 +57,9 @@
             "family": "monospace",
             "size": 20,
             "weight": "800"
-          }
+          },
+          "startTime": 2,
+          "endTime": 4
         },
         {
           "type": "text",
@@ -76,7 +81,9 @@
             "family": "monospace",
             "size": 20,
             "weight": "800"
-          }
+          },
+          "startTime": 2,
+          "endTime": 4
         },
         {
           "type": "text",
@@ -98,7 +105,9 @@
             "family": "monospace",
             "size": 20,
             "weight": "800"
-          }
+          },
+          "startTime": 2,
+          "endTime": 4
         }
       ],
       "audio": {
