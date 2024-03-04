@@ -23,9 +23,8 @@
             "y": 20
           },
           "transition": {
-            "duration": 2,
-            "enter": "fade",
-            "exit": "fade",
+            "enter": { "type": "fade", "duration": 2 },
+            "exit": { "type": "fade", "duration": 2 },
             "direction": "left"
           },
           "style": {
@@ -47,9 +46,8 @@
             "y": 40
           },
           "transition": {
-            "duration": 2,
-            "enter": "fade",
-            "exit": "fade",
+            "enter": { "type": "fade", "duration": 2 },
+            "exit": { "type": "fade", "duration": 2 },
             "direction": "left"
           },
           "style": {
@@ -71,9 +69,8 @@
             "y": 60
           },
           "transition": {
-            "duration": 2,
-            "enter": "fade",
-            "exit": "fade",
+            "enter": { "type": "fade", "duration": 2 },
+            "exit": { "type": "fade", "duration": 2 },
             "direction": "left"
           },
           "style": {
@@ -95,9 +92,8 @@
             "y": 80
           },
           "transition": {
-            "duration": 2,
-            "enter": "fade",
-            "exit": "fade",
+            "enter": { "type": "fade", "duration": 2 },
+            "exit": { "type": "fade", "duration": 2 },
             "direction": "left"
           },
           "style": {
@@ -118,9 +114,8 @@
         "volume": 1
       },
       "transition": {
-        "duration": 2,
-        "enter": "fade",
-        "exit": "fade",
+        "enter": { "type": "fade", "duration": 2 },
+        "exit": { "type": "fade", "duration": 2 },
         "direction": "left"
       }
     }
@@ -133,9 +128,8 @@
     "volume": 1
   },
   "transition": {
-    "duration": 2,
-    "enter": "fade",
-    "exit": "fade",
+    "enter": { "type": "fade", "duration": 2 },
+    "exit": { "type": "fade", "duration": 2 },
     "direction": "left"
   }
 }
