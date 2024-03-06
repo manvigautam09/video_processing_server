@@ -118,6 +118,122 @@
         "exit": { "type": "fade", "duration": 2 },
         "direction": "left"
       }
+    },
+    {
+      "id": "slide_2",
+      "duration": 5,
+      "background": {
+        "type": "image",
+        "imageUrl": "http://localhost:3005/slide-image?name=flower.png",
+        "videoUrl": "",
+        "hexCode": ""
+      },
+      "layers": [
+        {
+          "type": "text",
+          "id": "slide_2-text_1",
+          "title": "Layer 1",
+          "rotate": -5,
+          "position": {
+            "x": 10,
+            "y": 20
+          },
+          "transition": {
+            "enter": { "type": "fade", "duration": 2 },
+            "exit": { "type": "fade", "duration": 2 },
+            "direction": "left"
+          },
+          "style": {
+            "fill": "black",
+            "family": "monospace",
+            "size": 20,
+            "weight": "800"
+          },
+          "startTime": 2,
+          "endTime": 4
+        },
+        {
+          "type": "text",
+          "id": "slide_2-text_2",
+          "title": "Layer 2",
+          "rotate": -5,
+          "position": {
+            "x": 10,
+            "y": 40
+          },
+          "transition": {
+            "enter": { "type": "fade", "duration": 2 },
+            "exit": { "type": "fade", "duration": 2 },
+            "direction": "left"
+          },
+          "style": {
+            "fill": "red",
+            "family": "monospace",
+            "size": 20,
+            "weight": "800"
+          },
+          "startTime": 2,
+          "endTime": 4
+        },
+        {
+          "type": "text",
+          "id": "slide_2-text_3",
+          "title": "Layer 3",
+          "rotate": -5,
+          "position": {
+            "x": 10,
+            "y": 60
+          },
+          "transition": {
+            "enter": { "type": "fade", "duration": 2 },
+            "exit": { "type": "fade", "duration": 2 },
+            "direction": "left"
+          },
+          "style": {
+            "fill": "blue",
+            "family": "monospace",
+            "size": 20,
+            "weight": "800"
+          },
+          "startTime": 2,
+          "endTime": 4
+        },
+        {
+          "type": "text",
+          "id": "slide_2-text_4",
+          "title": "Layer 4",
+          "rotate": -5,
+          "position": {
+            "x": 10,
+            "y": 80
+          },
+          "transition": {
+            "enter": { "type": "fade", "duration": 2 },
+            "exit": { "type": "fade", "duration": 2 },
+            "direction": "left"
+          },
+          "style": {
+            "fill": "yellow",
+            "family": "monospace",
+            "size": 20,
+            "weight": "800"
+          },
+          "startTime": 2,
+          "endTime": 4
+        }
+      ],
+      "audio": {
+        "url": "https://cdn.transistor.fm/file/transistor/m/shows/20384/c698e69111b441535b74bb6fde4687b0.mp3",
+        "duration": 5,
+        "showCaptions": false,
+        "captions": "",
+        "volume": 1
+      },
+      "transition": {
+        "enter": { "type": "fade", "duration": 2 },
+        "exit": { "type": "fade", "duration": 2 },
+        "direction": "left"
+      }
     }
   ],
   "audio": {
