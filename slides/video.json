@@ -5,7 +5,7 @@
   "slides": [
     {
       "id": "slide_1",
-      "duration": 5,
+      "duration": 3,
       "background": {
         "type": "image",
         "imageUrl": "http://localhost:3005/slide-image?name=flower.png",
@@ -124,7 +124,7 @@
       "duration": 5,
       "background": {
         "type": "image",
-        "imageUrl": "http://localhost:3005/slide-image?name=flower.png",
+        "imageUrl": "http://localhost:3005/slide-image?name=autumn.png",
         "videoUrl": "",
         "hexCode": ""
       },
