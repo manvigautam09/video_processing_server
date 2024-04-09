@@ -97,12 +97,12 @@
                     "properties": {
                       "x": {
                         "type": "integer",
-                        "title": "The x Schema",
+                        "title": "The x co-ordinate",
                         "examples": [10]
                       },
                       "y": {
                         "type": "integer",
-                        "title": "The y Schema",
+                        "title": "The y co-ordinate",
                         "examples": [20]
                       }
                     },
@@ -124,12 +124,12 @@
                     "properties": {
                       "x": {
                         "type": "number",
-                        "title": "The x Schema",
+                        "title": "The x co-ordinate",
                         "examples": [0.1]
                       },
                       "y": {
                         "type": "number",
-                        "title": "The y Schema",
+                        "title": "The y co-ordinate",
                         "examples": [0.2]
                       }
                     },
@@ -280,7 +280,7 @@
             "title": "The layers Schema",
             "items": {
               "type": "object",
-              "title": "A Schema",
+              "title": "Properties of Layer",
               "required": [
                 "type",
                 "id",
@@ -301,18 +301,11 @@
                   "examples": ["text"]
                 },
                 "id": {
+                  "default": "123e4567-e89b-12d3-a456-426614174002",
                   "type": "string",
-                  "title": "The id Schema",
-                  "examples": [
-                    "slide_1-text_1",
-                    "slide_1-text_2",
-                    "slide_1-text_3",
-                    "slide_1-text_4",
-                    "slide_2-text_1",
-                    "slide_2-text_2",
-                    "slide_2-text_3",
-                    "slide_2-text_4"
-                  ]
+                  "format": "uuid",
+                  "title": "The video id Schema",
+                  "examples": ["123e4567-e89b-12d3-a456-426614174002"]
                 },
                 "title": {
                   "type": "string",
@@ -331,12 +324,12 @@
                   "properties": {
                     "x": {
                       "type": "integer",
-                      "title": "The x Schema",
+                      "title": "The x co-ordinate",
                       "examples": [10]
                     },
                     "y": {
                       "type": "integer",
-                      "title": "The y Schema",
+                      "title": "The y co-ordinate",
                       "examples": [20, 40, 60, 80]
                     }
                   },
@@ -384,13 +377,13 @@
                     "x": {
                       "type": "number",
                       "default": 0.0,
-                      "title": "The x Schema",
+                      "title": "The x co-ordinate",
                       "examples": [0.1]
                     },
                     "y": {
                       "type": "number",
                       "default": 0.0,
-                      "title": "The y Schema",
+                      "title": "The y co-ordinate",
                       "examples": [0.2]
                     }
                   },
