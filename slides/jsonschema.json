@@ -64,7 +64,7 @@
           "background": {
             "type": "object",
             "title": "The slide background Schema",
-            "required": ["type", "imageUrl", "videoUrl", "hexCode"],
+            "required": ["type", "imageDetails", "videoDetails", "hexCode"],
             "properties": {
               "type": {
                 "type": "string",
@@ -72,37 +72,206 @@
                 "title": "The type Schema",
                 "examples": ["image"]
               },
-              "imageUrl": {
-                "type": "string",
-                "title": "The imageUrl Schema",
+              "imageDetails": {
+                "type": "object",
+                "title": "The imageDetails Schema",
+                "required": ["url", "rotate", "position", "scale"],
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "title": "The url Schema",
+                    "examples": [
+                      "http://localhost:3005/slide-image?name=flower.png",
+                      "http://localhost:3005/slide-image?name=autumn.png"
+                    ]
+                  },
+                  "rotate": {
+                    "type": "integer",
+                    "title": "The rotate Schema",
+                    "examples": [-5]
+                  },
+                  "position": {
+                    "type": "object",
+                    "title": "The position Schema",
+                    "required": ["x", "y"],
+                    "properties": {
+                      "x": {
+                        "type": "integer",
+                        "title": "The x Schema",
+                        "examples": [10]
+                      },
+                      "y": {
+                        "type": "integer",
+                        "title": "The y Schema",
+                        "examples": [20]
+                      }
+                    },
+                    "examples": [
+                      {
+                        "x": 10,
+                        "y": 20
+                      },
+                      {
+                        "x": 10,
+                        "y": 20
+                      }
+                    ]
+                  },
+                  "scale": {
+                    "type": "object",
+                    "title": "The scale Schema",
+                    "required": ["x", "y"],
+                    "properties": {
+                      "x": {
+                        "type": "number",
+                        "title": "The x Schema",
+                        "examples": [0.1]
+                      },
+                      "y": {
+                        "type": "number",
+                        "title": "The y Schema",
+                        "examples": [0.2]
+                      }
+                    },
+                    "examples": [
+                      {
+                        "x": 0.1,
+                        "y": 0.2
+                      },
+                      {
+                        "x": 0.1,
+                        "y": 0.2
+                      }
+                    ]
+                  }
+                },
                 "examples": [
-                  "http://localhost:3005/slide-image?name=flower.png",
-                  "http://localhost:3005/slide-image?name=autumn.png"
+                  {
+                    "url": "http://localhost:3005/slide-image?name=flower.png",
+                    "rotate": -5,
+                    "position": {
+                      "x": 10,
+                      "y": 20
+                    },
+                    "scale": {
+                      "x": 0.1,
+                      "y": 0.2
+                    }
+                  },
+                  {
+                    "url": "http://localhost:3005/slide-image?name=autumn.png",
+                    "rotate": -5,
+                    "position": {
+                      "x": 10,
+                      "y": 20
+                    },
+                    "scale": {
+                      "x": 0.1,
+                      "y": 0.2
+                    }
+                  }
                 ]
               },
-              "videoUrl": {
-                "type": "string",
-                "title": "The videoUrl Schema",
-                "examples": [""]
+              "videoDetails": {
+                "type": "object",
+                "title": "The videoDetails Schema",
+                "required": ["url"],
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "title": "The url Schema",
+                    "examples": [""]
+                  }
+                },
+                "examples": [
+                  {
+                    "url": ""
+                  },
+                  {
+                    "url": ""
+                  }
+                ]
               },
               "hexCode": {
-                "type": "string",
+                "type": "object",
                 "title": "The hexCode Schema",
-                "examples": [""]
+                "required": ["gradient", "opacity"],
+                "properties": {
+                  "gradient": {
+                    "type": "array",
+                    "title": "The gradient Schema",
+                    "items": {
+                      "type": "string",
+                      "title": "A Schema",
+                      "examples": ["#ff0000", "#00ff00", "#0000ff"]
+                    },
+                    "examples": [
+                      ["#ff0000", "#00ff00", "#0000ff"],
+                      ["#ff0000", "#00ff00", "#0000ff"]
+                    ]
+                  },
+                  "opacity": {
+                    "type": "string",
+                    "title": "The opacity Schema",
+                    "examples": ["0.5"]
+                  }
+                },
+                "examples": [
+                  {
+                    "gradient": ["#ff0000", "#00ff00", "#0000ff"],
+                    "opacity": "0.5"
+                  },
+                  {
+                    "gradient": ["#ff0000", "#00ff00", "#0000ff"],
+                    "opacity": "0.5"
+                  }
+                ]
               }
             },
             "examples": [
               {
                 "type": "image",
-                "imageUrl": "http://localhost:3005/slide-image?name=flower.png",
-                "videoUrl": "",
-                "hexCode": ""
+                "imageDetails": {
+                  "url": "http://localhost:3005/slide-image?name=flower.png",
+                  "rotate": -5,
+                  "position": {
+                    "x": 10,
+                    "y": 20
+                  },
+                  "scale": {
+                    "x": 0.1,
+                    "y": 0.2
+                  }
+                },
+                "videoDetails": {
+                  "url": ""
+                },
+                "hexCode": {
+                  "gradient": ["#ff0000", "#00ff00", "#0000ff"],
+                  "opacity": "0.5"
+                }
               },
               {
                 "type": "image",
-                "imageUrl": "http://localhost:3005/slide-image?name=autumn.png",
-                "videoUrl": "",
-                "hexCode": ""
+                "imageDetails": {
+                  "url": "http://localhost:3005/slide-image?name=autumn.png",
+                  "rotate": -5,
+                  "position": {
+                    "x": 10,
+                    "y": 20
+                  },
+                  "scale": {
+                    "x": 0.1,
+                    "y": 0.2
+                  }
+                },
+                "videoDetails": {
+                  "url": ""
+                },
+                "hexCode": {
+                  "gradient": ["#ff0000", "#00ff00", "#0000ff"],
+                  "opacity": "0.5"
+                }
               }
             ]
           },
@@ -120,6 +289,7 @@
                 "position",
                 "scale",
                 "transition",
+                "animation",
                 "style",
                 "startTime",
                 "endTime"
@@ -435,6 +605,32 @@
                     }
                   ]
                 },
+                "animation": {
+                  "type": "object",
+                  "default": {},
+                  "title": "The animation Schema",
+                  "required": ["type", "duration"],
+                  "properties": {
+                    "type": {
+                      "type": "string",
+                      "default": "",
+                      "title": "The type Schema",
+                      "examples": ["bounce"]
+                    },
+                    "duration": {
+                      "type": "integer",
+                      "default": 0,
+                      "title": "The duration Schema",
+                      "examples": [2]
+                    }
+                  },
+                  "examples": [
+                    {
+                      "type": "bounce",
+                      "duration": 2
+                    }
+                  ]
+                },
                 "style": {
                   "type": "object",
                   "title": "The style Schema",
@@ -547,6 +743,10 @@
                       "duration": 2
                     },
                     "direction": "left"
+                  },
+                  "animation": {
+                    "type": "bounce",
+                    "duration": 2
                   },
                   "style": {
                     "fill": "black",
@@ -787,6 +987,10 @@
                       "duration": 2
                     },
                     "direction": "left"
+                  },
+                  "animation": {
+                    "type": "bounce",
+                    "duration": 2
                   },
                   "style": {
                     "fill": "black",
@@ -1155,12 +1359,28 @@
         "examples": [
           {
             "id": "slide_1",
-            "duration": 3,
+            "duration": 3000,
             "background": {
               "type": "image",
-              "imageUrl": "http://localhost:3005/slide-image?name=flower.png",
-              "videoUrl": "",
-              "hexCode": ""
+              "imageDetails": {
+                "url": "http://localhost:3005/slide-image?name=flower.png",
+                "rotate": -5,
+                "position": {
+                  "x": 10,
+                  "y": 20
+                },
+                "scale": {
+                  "x": 0.1,
+                  "y": 0.2
+                }
+              },
+              "videoDetails": {
+                "url": ""
+              },
+              "hexCode": {
+                "gradient": ["#ff0000", "#00ff00", "#0000ff"],
+                "opacity": "0.5"
+              }
             },
             "layers": [
               {
@@ -1186,6 +1406,10 @@
                     "duration": 2
                   },
                   "direction": "left"
+                },
+                "animation": {
+                  "type": "bounce",
+                  "duration": 2
                 },
                 "style": {
                   "fill": "black",
@@ -1305,12 +1529,28 @@
           },
           {
             "id": "slide_2",
-            "duration": 5,
+            "duration": 5000,
             "background": {
               "type": "image",
-              "imageUrl": "http://localhost:3005/slide-image?name=autumn.png",
-              "videoUrl": "",
-              "hexCode": ""
+              "imageDetails": {
+                "url": "http://localhost:3005/slide-image?name=autumn.png",
+                "rotate": -5,
+                "position": {
+                  "x": 10,
+                  "y": 20
+                },
+                "scale": {
+                  "x": 0.1,
+                  "y": 0.2
+                }
+              },
+              "videoDetails": {
+                "url": ""
+              },
+              "hexCode": {
+                "gradient": ["#ff0000", "#00ff00", "#0000ff"],
+                "opacity": "0.5"
+              }
             },
             "layers": [
               {
@@ -1455,12 +1695,28 @@
         [
           {
             "id": "slide_1",
-            "duration": 3,
+            "duration": 3000,
             "background": {
               "type": "image",
-              "imageUrl": "http://localhost:3005/slide-image?name=flower.png",
-              "videoUrl": "",
-              "hexCode": ""
+              "imageDetails": {
+                "url": "http://localhost:3005/slide-image?name=flower.png",
+                "rotate": -5,
+                "position": {
+                  "x": 10,
+                  "y": 20
+                },
+                "scale": {
+                  "x": 0.1,
+                  "y": 0.2
+                }
+              },
+              "videoDetails": {
+                "url": ""
+              },
+              "hexCode": {
+                "gradient": ["#ff0000", "#00ff00", "#0000ff"],
+                "opacity": "0.5"
+              }
             },
             "layers": [
               {
@@ -1486,6 +1742,10 @@
                     "duration": 2
                   },
                   "direction": "left"
+                },
+                "animation": {
+                  "type": "bounce",
+                  "duration": 2
                 },
                 "style": {
                   "fill": "black",
@@ -1605,12 +1865,28 @@
           },
           {
             "id": "slide_2",
-            "duration": 5,
+            "duration": 5000,
             "background": {
               "type": "image",
-              "imageUrl": "http://localhost:3005/slide-image?name=autumn.png",
-              "videoUrl": "",
-              "hexCode": ""
+              "imageDetails": {
+                "url": "http://localhost:3005/slide-image?name=autumn.png",
+                "rotate": -5,
+                "position": {
+                  "x": 10,
+                  "y": 20
+                },
+                "scale": {
+                  "x": 0.1,
+                  "y": 0.2
+                }
+              },
+              "videoDetails": {
+                "url": ""
+              },
+              "hexCode": {
+                "gradient": ["#ff0000", "#00ff00", "#0000ff"],
+                "opacity": "0.5"
+              }
             },
             "layers": [
               {
@@ -1889,12 +2165,28 @@
       "slides": [
         {
           "id": "slide_1",
-          "duration": 3,
+          "duration": 3000,
           "background": {
             "type": "image",
-            "imageUrl": "http://localhost:3005/slide-image?name=flower.png",
-            "videoUrl": "",
-            "hexCode": ""
+            "imageDetails": {
+              "url": "http://localhost:3005/slide-image?name=flower.png",
+              "rotate": -5,
+              "position": {
+                "x": 10,
+                "y": 20
+              },
+              "scale": {
+                "x": 0.1,
+                "y": 0.2
+              }
+            },
+            "videoDetails": {
+              "url": ""
+            },
+            "hexCode": {
+              "gradient": ["#ff0000", "#00ff00", "#0000ff"],
+              "opacity": "0.5"
+            }
           },
           "layers": [
             {
@@ -1920,6 +2212,10 @@
                   "duration": 2
                 },
                 "direction": "left"
+              },
+              "animation": {
+                "type": "bounce",
+                "duration": 2
               },
               "style": {
                 "fill": "black",
@@ -2039,12 +2335,28 @@
         },
         {
           "id": "slide_2",
-          "duration": 5,
+          "duration": 5000,
           "background": {
             "type": "image",
-            "imageUrl": "http://localhost:3005/slide-image?name=autumn.png",
-            "videoUrl": "",
-            "hexCode": ""
+            "imageDetails": {
+              "url": "http://localhost:3005/slide-image?name=autumn.png",
+              "rotate": -5,
+              "position": {
+                "x": 10,
+                "y": 20
+              },
+              "scale": {
+                "x": 0.1,
+                "y": 0.2
+              }
+            },
+            "videoDetails": {
+              "url": ""
+            },
+            "hexCode": {
+              "gradient": ["#ff0000", "#00ff00", "#0000ff"],
+              "opacity": "0.5"
+            }
           },
           "layers": [
             {
