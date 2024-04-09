@@ -5,12 +5,28 @@
   "slides": [
     {
       "id": "slide_1",
-      "duration": 3,
+      "duration": 3000,
       "background": {
         "type": "image",
-        "imageUrl": "http://localhost:3005/slide-image?name=flower.png",
-        "videoUrl": "",
-        "hexCode": ""
+        "imageDetails": {
+          "url": "http://localhost:3005/slide-image?name=flower.png",
+          "rotate": -5,
+          "position": {
+            "x": 10,
+            "y": 20
+          },
+          "scale": {
+            "x": 0.1,
+            "y": 0.2
+          }
+        },
+        "videoDetails": {
+          "url": ""
+        },
+        "hexCode": {
+          "gradient": ["#ff0000", "#00ff00", "#0000ff"],
+          "opacity": "0.5"
+        }
       },
       "layers": [
         {
@@ -22,10 +38,18 @@
             "x": 10,
             "y": 20
           },
+          "scale": {
+            "x": 0.1,
+            "y": 0.2
+          },
           "transition": {
             "enter": { "type": "fade", "duration": 2 },
             "exit": { "type": "fade", "duration": 2 },
             "direction": "left"
+          },
+          "animation": {
+            "type": "bounce",
+            "duration": 2
           },
           "style": {
             "fill": "black",
@@ -121,12 +145,28 @@
     },
     {
       "id": "slide_2",
-      "duration": 5,
+      "duration": 5000,
       "background": {
         "type": "image",
-        "imageUrl": "http://localhost:3005/slide-image?name=autumn.png",
-        "videoUrl": "",
-        "hexCode": ""
+        "imageDetails": {
+          "url": "http://localhost:3005/slide-image?name=autumn.png",
+          "rotate": -5,
+          "position": {
+            "x": 10,
+            "y": 20
+          },
+          "scale": {
+            "x": 0.1,
+            "y": 0.2
+          }
+        },
+        "videoDetails": {
+          "url": ""
+        },
+        "hexCode": {
+          "gradient": ["#ff0000", "#00ff00", "#0000ff"],
+          "opacity": "0.5"
+        }
       },
       "layers": [
         {

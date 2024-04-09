@@ -1,0 +1,2207 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "default": {},
+  "title": "Root Schema",
+  "required": [
+    "id",
+    "aspectRatio",
+    "thumbnail",
+    "slides",
+    "audio",
+    "transition"
+  ],
+  "properties": {
+    "id": {
+      "default": "123e4567-e89b-12d3-a456-426614174000",
+      "type": "string",
+      "format": "uuid",
+      "title": "The video id Schema",
+      "examples": ["123e4567-e89b-12d3-a456-426614174000"]
+    },
+    "aspectRatio": {
+      "type": "string",
+      "default": "16:9",
+      "title": "The aspectRatio Schema",
+      "enum": ["16:9 | 1:1 | 4:5 | 9:16"],
+      "examples": ["16:9"]
+    },
+    "thumbnail": {
+      "type": "string",
+      "default": "",
+      "title": "The thumbnail Schema",
+      "examples": ["flower.png"]
+    },
+    "slides": {
+      "type": "array",
+      "default": [],
+      "title": "The slides Schema",
+      "items": {
+        "type": "object",
+        "title": "Keys of Slide",
+        "required": [
+          "id",
+          "duration",
+          "background",
+          "layers",
+          "audio",
+          "transition"
+        ],
+        "properties": {
+          "id": {
+            "default": "123e4567-e89b-12d3-a456-426614174001",
+            "format": "uuid",
+            "type": "string",
+            "title": "The id Schema",
+            "examples": ["123e4567-e89b-12d3-a456-426614174001"]
+          },
+          "duration": {
+            "type": "integer",
+            "title": "The slide duration Schema",
+            "examples": [3000, 5000]
+          },
+          "background": {
+            "type": "object",
+            "title": "The slide background Schema",
+            "required": ["type", "imageUrl", "videoUrl", "hexCode"],
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": ["image", "video", "color"],
+                "title": "The type Schema",
+                "examples": ["image"]
+              },
+              "imageUrl": {
+                "type": "string",
+                "title": "The imageUrl Schema",
+                "examples": [
+                  "http://localhost:3005/slide-image?name=flower.png",
+                  "http://localhost:3005/slide-image?name=autumn.png"
+                ]
+              },
+              "videoUrl": {
+                "type": "string",
+                "title": "The videoUrl Schema",
+                "examples": [""]
+              },
+              "hexCode": {
+                "type": "string",
+                "title": "The hexCode Schema",
+                "examples": [""]
+              }
+            },
+            "examples": [
+              {
+                "type": "image",
+                "imageUrl": "http://localhost:3005/slide-image?name=flower.png",
+                "videoUrl": "",
+                "hexCode": ""
+              },
+              {
+                "type": "image",
+                "imageUrl": "http://localhost:3005/slide-image?name=autumn.png",
+                "videoUrl": "",
+                "hexCode": ""
+              }
+            ]
+          },
+          "layers": {
+            "type": "array",
+            "title": "The layers Schema",
+            "items": {
+              "type": "object",
+              "title": "A Schema",
+              "required": [
+                "type",
+                "id",
+                "title",
+                "rotate",
+                "position",
+                "scale",
+                "transition",
+                "style",
+                "startTime",
+                "endTime"
+              ],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "title": "The type Schema",
+                  "examples": ["text"]
+                },
+                "id": {
+                  "type": "string",
+                  "title": "The id Schema",
+                  "examples": [
+                    "slide_1-text_1",
+                    "slide_1-text_2",
+                    "slide_1-text_3",
+                    "slide_1-text_4",
+                    "slide_2-text_1",
+                    "slide_2-text_2",
+                    "slide_2-text_3",
+                    "slide_2-text_4"
+                  ]
+                },
+                "title": {
+                  "type": "string",
+                  "title": "The title Schema",
+                  "examples": ["Layer 1", "Layer 2", "Layer 3", "Layer 4"]
+                },
+                "rotate": {
+                  "type": "integer",
+                  "title": "The rotate Schema",
+                  "examples": [-5]
+                },
+                "position": {
+                  "type": "object",
+                  "title": "The position Schema",
+                  "required": ["x", "y"],
+                  "properties": {
+                    "x": {
+                      "type": "integer",
+                      "title": "The x Schema",
+                      "examples": [10]
+                    },
+                    "y": {
+                      "type": "integer",
+                      "title": "The y Schema",
+                      "examples": [20, 40, 60, 80]
+                    }
+                  },
+                  "examples": [
+                    {
+                      "x": 10,
+                      "y": 20
+                    },
+                    {
+                      "x": 10,
+                      "y": 40
+                    },
+                    {
+                      "x": 10,
+                      "y": 60
+                    },
+                    {
+                      "x": 10,
+                      "y": 80
+                    },
+                    {
+                      "x": 10,
+                      "y": 20
+                    },
+                    {
+                      "x": 10,
+                      "y": 40
+                    },
+                    {
+                      "x": 10,
+                      "y": 60
+                    },
+                    {
+                      "x": 10,
+                      "y": 80
+                    }
+                  ]
+                },
+                "scale": {
+                  "type": "object",
+                  "default": {},
+                  "title": "The scale Schema",
+                  "required": ["x", "y"],
+                  "properties": {
+                    "x": {
+                      "type": "number",
+                      "default": 0.0,
+                      "title": "The x Schema",
+                      "examples": [0.1]
+                    },
+                    "y": {
+                      "type": "number",
+                      "default": 0.0,
+                      "title": "The y Schema",
+                      "examples": [0.2]
+                    }
+                  },
+                  "examples": [
+                    {
+                      "x": 0.1,
+                      "y": 0.2
+                    }
+                  ]
+                },
+                "transition": {
+                  "type": "object",
+                  "title": "The transition Schema",
+                  "required": ["enter", "exit", "direction"],
+                  "properties": {
+                    "enter": {
+                      "type": "object",
+                      "title": "The enter Schema",
+                      "required": ["type", "duration"],
+                      "properties": {
+                        "type": {
+                          "type": "string",
+                          "title": "The type Schema",
+                          "examples": ["fade"]
+                        },
+                        "duration": {
+                          "type": "integer",
+                          "title": "The duration Schema",
+                          "examples": [2]
+                        }
+                      },
+                      "examples": [
+                        {
+                          "type": "fade",
+                          "duration": 2
+                        },
+                        {
+                          "type": "fade",
+                          "duration": 2
+                        },
+                        {
+                          "type": "fade",
+                          "duration": 2
+                        },
+                        {
+                          "type": "fade",
+                          "duration": 2
+                        },
+                        {
+                          "type": "fade",
+                          "duration": 2
+                        },
+                        {
+                          "type": "fade",
+                          "duration": 2
+                        },
+                        {
+                          "type": "fade",
+                          "duration": 2
+                        },
+                        {
+                          "type": "fade",
+                          "duration": 2
+                        }
+                      ]
+                    },
+                    "exit": {
+                      "type": "object",
+                      "title": "The exit Schema",
+                      "required": ["type", "duration"],
+                      "properties": {
+                        "type": {
+                          "type": "string",
+                          "title": "The type Schema",
+                          "examples": ["fade"]
+                        },
+                        "duration": {
+                          "type": "integer",
+                          "title": "The duration Schema",
+                          "examples": [2]
+                        }
+                      },
+                      "examples": [
+                        {
+                          "type": "fade",
+                          "duration": 2
+                        },
+                        {
+                          "type": "fade",
+                          "duration": 2
+                        },
+                        {
+                          "type": "fade",
+                          "duration": 2
+                        },
+                        {
+                          "type": "fade",
+                          "duration": 2
+                        },
+                        {
+                          "type": "fade",
+                          "duration": 2
+                        },
+                        {
+                          "type": "fade",
+                          "duration": 2
+                        },
+                        {
+                          "type": "fade",
+                          "duration": 2
+                        },
+                        {
+                          "type": "fade",
+                          "duration": 2
+                        }
+                      ]
+                    },
+                    "direction": {
+                      "type": "string",
+                      "title": "The direction Schema",
+                      "examples": ["left"]
+                    }
+                  },
+                  "examples": [
+                    {
+                      "enter": {
+                        "type": "fade",
+                        "duration": 2
+                      },
+                      "exit": {
+                        "type": "fade",
+                        "duration": 2
+                      },
+                      "direction": "left"
+                    },
+                    {
+                      "enter": {
+                        "type": "fade",
+                        "duration": 2
+                      },
+                      "exit": {
+                        "type": "fade",
+                        "duration": 2
+                      },
+                      "direction": "left"
+                    },
+                    {
+                      "enter": {
+                        "type": "fade",
+                        "duration": 2
+                      },
+                      "exit": {
+                        "type": "fade",
+                        "duration": 2
+                      },
+                      "direction": "left"
+                    },
+                    {
+                      "enter": {
+                        "type": "fade",
+                        "duration": 2
+                      },
+                      "exit": {
+                        "type": "fade",
+                        "duration": 2
+                      },
+                      "direction": "left"
+                    },
+                    {
+                      "enter": {
+                        "type": "fade",
+                        "duration": 2
+                      },
+                      "exit": {
+                        "type": "fade",
+                        "duration": 2
+                      },
+                      "direction": "left"
+                    },
+                    {
+                      "enter": {
+                        "type": "fade",
+                        "duration": 2
+                      },
+                      "exit": {
+                        "type": "fade",
+                        "duration": 2
+                      },
+                      "direction": "left"
+                    },
+                    {
+                      "enter": {
+                        "type": "fade",
+                        "duration": 2
+                      },
+                      "exit": {
+                        "type": "fade",
+                        "duration": 2
+                      },
+                      "direction": "left"
+                    },
+                    {
+                      "enter": {
+                        "type": "fade",
+                        "duration": 2
+                      },
+                      "exit": {
+                        "type": "fade",
+                        "duration": 2
+                      },
+                      "direction": "left"
+                    }
+                  ]
+                },
+                "style": {
+                  "type": "object",
+                  "title": "The style Schema",
+                  "required": ["fill", "family", "size", "weight"],
+                  "properties": {
+                    "fill": {
+                      "type": "string",
+                      "title": "The fill Schema",
+                      "examples": ["black", "red", "blue", "yellow"]
+                    },
+                    "family": {
+                      "type": "string",
+                      "title": "The family Schema",
+                      "examples": ["monospace"]
+                    },
+                    "size": {
+                      "type": "integer",
+                      "title": "The size Schema",
+                      "examples": [20]
+                    },
+                    "weight": {
+                      "type": "string",
+                      "title": "The weight Schema",
+                      "examples": ["800"]
+                    }
+                  },
+                  "examples": [
+                    {
+                      "fill": "black",
+                      "family": "monospace",
+                      "size": 20,
+                      "weight": "800"
+                    },
+                    {
+                      "fill": "red",
+                      "family": "monospace",
+                      "size": 20,
+                      "weight": "800"
+                    },
+                    {
+                      "fill": "blue",
+                      "family": "monospace",
+                      "size": 20,
+                      "weight": "800"
+                    },
+                    {
+                      "fill": "yellow",
+                      "family": "monospace",
+                      "size": 20,
+                      "weight": "800"
+                    },
+                    {
+                      "fill": "black",
+                      "family": "monospace",
+                      "size": 20,
+                      "weight": "800"
+                    },
+                    {
+                      "fill": "red",
+                      "family": "monospace",
+                      "size": 20,
+                      "weight": "800"
+                    },
+                    {
+                      "fill": "blue",
+                      "family": "monospace",
+                      "size": 20,
+                      "weight": "800"
+                    },
+                    {
+                      "fill": "yellow",
+                      "family": "monospace",
+                      "size": 20,
+                      "weight": "800"
+                    }
+                  ]
+                },
+                "startTime": {
+                  "type": "integer",
+                  "title": "The startTime Schema",
+                  "examples": [2]
+                },
+                "endTime": {
+                  "type": "integer",
+                  "title": "The endTime Schema",
+                  "examples": [4]
+                }
+              },
+              "examples": [
+                {
+                  "type": "text",
+                  "id": "slide_1-text_1",
+                  "title": "Layer 1",
+                  "rotate": -5,
+                  "position": {
+                    "x": 10,
+                    "y": 20
+                  },
+                  "scale": {
+                    "x": 0.1,
+                    "y": 0.2
+                  },
+                  "transition": {
+                    "enter": {
+                      "type": "fade",
+                      "duration": 2
+                    },
+                    "exit": {
+                      "type": "fade",
+                      "duration": 2
+                    },
+                    "direction": "left"
+                  },
+                  "style": {
+                    "fill": "black",
+                    "family": "monospace",
+                    "size": 20,
+                    "weight": "800"
+                  },
+                  "startTime": 2,
+                  "endTime": 4
+                },
+                {
+                  "type": "text",
+                  "id": "slide_1-text_2",
+                  "title": "Layer 2",
+                  "rotate": -5,
+                  "position": {
+                    "x": 10,
+                    "y": 40
+                  },
+                  "transition": {
+                    "enter": {
+                      "type": "fade",
+                      "duration": 2
+                    },
+                    "exit": {
+                      "type": "fade",
+                      "duration": 2
+                    },
+                    "direction": "left"
+                  },
+                  "style": {
+                    "fill": "red",
+                    "family": "monospace",
+                    "size": 20,
+                    "weight": "800"
+                  },
+                  "startTime": 2,
+                  "endTime": 4
+                },
+                {
+                  "type": "text",
+                  "id": "slide_1-text_3",
+                  "title": "Layer 3",
+                  "rotate": -5,
+                  "position": {
+                    "x": 10,
+                    "y": 60
+                  },
+                  "transition": {
+                    "enter": {
+                      "type": "fade",
+                      "duration": 2
+                    },
+                    "exit": {
+                      "type": "fade",
+                      "duration": 2
+                    },
+                    "direction": "left"
+                  },
+                  "style": {
+                    "fill": "blue",
+                    "family": "monospace",
+                    "size": 20,
+                    "weight": "800"
+                  },
+                  "startTime": 2,
+                  "endTime": 4
+                },
+                {
+                  "type": "text",
+                  "id": "slide_1-text_4",
+                  "title": "Layer 4",
+                  "rotate": -5,
+                  "position": {
+                    "x": 10,
+                    "y": 80
+                  },
+                  "transition": {
+                    "enter": {
+                      "type": "fade",
+                      "duration": 2
+                    },
+                    "exit": {
+                      "type": "fade",
+                      "duration": 2
+                    },
+                    "direction": "left"
+                  },
+                  "style": {
+                    "fill": "yellow",
+                    "family": "monospace",
+                    "size": 20,
+                    "weight": "800"
+                  },
+                  "startTime": 2,
+                  "endTime": 4
+                },
+                {
+                  "type": "text",
+                  "id": "slide_2-text_1",
+                  "title": "Layer 1",
+                  "rotate": -5,
+                  "position": {
+                    "x": 10,
+                    "y": 20
+                  },
+                  "transition": {
+                    "enter": {
+                      "type": "fade",
+                      "duration": 2
+                    },
+                    "exit": {
+                      "type": "fade",
+                      "duration": 2
+                    },
+                    "direction": "left"
+                  },
+                  "style": {
+                    "fill": "black",
+                    "family": "monospace",
+                    "size": 20,
+                    "weight": "800"
+                  },
+                  "startTime": 2,
+                  "endTime": 4
+                },
+                {
+                  "type": "text",
+                  "id": "slide_2-text_2",
+                  "title": "Layer 2",
+                  "rotate": -5,
+                  "position": {
+                    "x": 10,
+                    "y": 40
+                  },
+                  "transition": {
+                    "enter": {
+                      "type": "fade",
+                      "duration": 2
+                    },
+                    "exit": {
+                      "type": "fade",
+                      "duration": 2
+                    },
+                    "direction": "left"
+                  },
+                  "style": {
+                    "fill": "red",
+                    "family": "monospace",
+                    "size": 20,
+                    "weight": "800"
+                  },
+                  "startTime": 2,
+                  "endTime": 4
+                },
+                {
+                  "type": "text",
+                  "id": "slide_2-text_3",
+                  "title": "Layer 3",
+                  "rotate": -5,
+                  "position": {
+                    "x": 10,
+                    "y": 60
+                  },
+                  "transition": {
+                    "enter": {
+                      "type": "fade",
+                      "duration": 2
+                    },
+                    "exit": {
+                      "type": "fade",
+                      "duration": 2
+                    },
+                    "direction": "left"
+                  },
+                  "style": {
+                    "fill": "blue",
+                    "family": "monospace",
+                    "size": 20,
+                    "weight": "800"
+                  },
+                  "startTime": 2,
+                  "endTime": 4
+                },
+                {
+                  "type": "text",
+                  "id": "slide_2-text_4",
+                  "title": "Layer 4",
+                  "rotate": -5,
+                  "position": {
+                    "x": 10,
+                    "y": 80
+                  },
+                  "transition": {
+                    "enter": {
+                      "type": "fade",
+                      "duration": 2
+                    },
+                    "exit": {
+                      "type": "fade",
+                      "duration": 2
+                    },
+                    "direction": "left"
+                  },
+                  "style": {
+                    "fill": "yellow",
+                    "family": "monospace",
+                    "size": 20,
+                    "weight": "800"
+                  },
+                  "startTime": 2,
+                  "endTime": 4
+                }
+              ]
+            },
+            "examples": [
+              [
+                {
+                  "type": "text",
+                  "id": "slide_1-text_1",
+                  "title": "Layer 1",
+                  "rotate": -5,
+                  "position": {
+                    "x": 10,
+                    "y": 20
+                  },
+                  "scale": {
+                    "x": 0.1,
+                    "y": 0.2
+                  },
+                  "transition": {
+                    "enter": {
+                      "type": "fade",
+                      "duration": 2
+                    },
+                    "exit": {
+                      "type": "fade",
+                      "duration": 2
+                    },
+                    "direction": "left"
+                  },
+                  "style": {
+                    "fill": "black",
+                    "family": "monospace",
+                    "size": 20,
+                    "weight": "800"
+                  },
+                  "startTime": 2,
+                  "endTime": 4
+                },
+                {
+                  "type": "text",
+                  "id": "slide_1-text_2",
+                  "title": "Layer 2",
+                  "rotate": -5,
+                  "position": {
+                    "x": 10,
+                    "y": 40
+                  },
+                  "transition": {
+                    "enter": {
+                      "type": "fade",
+                      "duration": 2
+                    },
+                    "exit": {
+                      "type": "fade",
+                      "duration": 2
+                    },
+                    "direction": "left"
+                  },
+                  "style": {
+                    "fill": "red",
+                    "family": "monospace",
+                    "size": 20,
+                    "weight": "800"
+                  },
+                  "startTime": 2,
+                  "endTime": 4
+                },
+                {
+                  "type": "text",
+                  "id": "slide_1-text_3",
+                  "title": "Layer 3",
+                  "rotate": -5,
+                  "position": {
+                    "x": 10,
+                    "y": 60
+                  },
+                  "transition": {
+                    "enter": {
+                      "type": "fade",
+                      "duration": 2
+                    },
+                    "exit": {
+                      "type": "fade",
+                      "duration": 2
+                    },
+                    "direction": "left"
+                  },
+                  "style": {
+                    "fill": "blue",
+                    "family": "monospace",
+                    "size": 20,
+                    "weight": "800"
+                  },
+                  "startTime": 2,
+                  "endTime": 4
+                },
+                {
+                  "type": "text",
+                  "id": "slide_1-text_4",
+                  "title": "Layer 4",
+                  "rotate": -5,
+                  "position": {
+                    "x": 10,
+                    "y": 80
+                  },
+                  "transition": {
+                    "enter": {
+                      "type": "fade",
+                      "duration": 2
+                    },
+                    "exit": {
+                      "type": "fade",
+                      "duration": 2
+                    },
+                    "direction": "left"
+                  },
+                  "style": {
+                    "fill": "yellow",
+                    "family": "monospace",
+                    "size": 20,
+                    "weight": "800"
+                  },
+                  "startTime": 2,
+                  "endTime": 4
+                }
+              ],
+              [
+                {
+                  "type": "text",
+                  "id": "slide_2-text_1",
+                  "title": "Layer 1",
+                  "rotate": -5,
+                  "position": {
+                    "x": 10,
+                    "y": 20
+                  },
+                  "transition": {
+                    "enter": {
+                      "type": "fade",
+                      "duration": 2
+                    },
+                    "exit": {
+                      "type": "fade",
+                      "duration": 2
+                    },
+                    "direction": "left"
+                  },
+                  "style": {
+                    "fill": "black",
+                    "family": "monospace",
+                    "size": 20,
+                    "weight": "800"
+                  },
+                  "startTime": 2,
+                  "endTime": 4
+                },
+                {
+                  "type": "text",
+                  "id": "slide_2-text_2",
+                  "title": "Layer 2",
+                  "rotate": -5,
+                  "position": {
+                    "x": 10,
+                    "y": 40
+                  },
+                  "transition": {
+                    "enter": {
+                      "type": "fade",
+                      "duration": 2
+                    },
+                    "exit": {
+                      "type": "fade",
+                      "duration": 2
+                    },
+                    "direction": "left"
+                  },
+                  "style": {
+                    "fill": "red",
+                    "family": "monospace",
+                    "size": 20,
+                    "weight": "800"
+                  },
+                  "startTime": 2,
+                  "endTime": 4
+                },
+                {
+                  "type": "text",
+                  "id": "slide_2-text_3",
+                  "title": "Layer 3",
+                  "rotate": -5,
+                  "position": {
+                    "x": 10,
+                    "y": 60
+                  },
+                  "transition": {
+                    "enter": {
+                      "type": "fade",
+                      "duration": 2
+                    },
+                    "exit": {
+                      "type": "fade",
+                      "duration": 2
+                    },
+                    "direction": "left"
+                  },
+                  "style": {
+                    "fill": "blue",
+                    "family": "monospace",
+                    "size": 20,
+                    "weight": "800"
+                  },
+                  "startTime": 2,
+                  "endTime": 4
+                },
+                {
+                  "type": "text",
+                  "id": "slide_2-text_4",
+                  "title": "Layer 4",
+                  "rotate": -5,
+                  "position": {
+                    "x": 10,
+                    "y": 80
+                  },
+                  "transition": {
+                    "enter": {
+                      "type": "fade",
+                      "duration": 2
+                    },
+                    "exit": {
+                      "type": "fade",
+                      "duration": 2
+                    },
+                    "direction": "left"
+                  },
+                  "style": {
+                    "fill": "yellow",
+                    "family": "monospace",
+                    "size": 20,
+                    "weight": "800"
+                  },
+                  "startTime": 2,
+                  "endTime": 4
+                }
+              ]
+            ]
+          },
+          "audio": {
+            "type": "object",
+            "title": "The audio Schema",
+            "required": [
+              "url",
+              "duration",
+              "showCaptions",
+              "captions",
+              "volume"
+            ],
+            "properties": {
+              "url": {
+                "type": "string",
+                "title": "The url Schema",
+                "examples": [
+                  "https://cdn.transistor.fm/file/transistor/m/shows/20384/c698e69111b441535b74bb6fde4687b0.mp3"
+                ]
+              },
+              "duration": {
+                "type": "integer",
+                "title": "The duration Schema",
+                "examples": [5]
+              },
+              "showCaptions": {
+                "type": "boolean",
+                "title": "The showCaptions Schema",
+                "examples": [false]
+              },
+              "captions": {
+                "type": "string",
+                "title": "The captions Schema",
+                "examples": [""]
+              },
+              "volume": {
+                "type": "integer",
+                "title": "The volume Schema",
+                "examples": [1]
+              }
+            },
+            "examples": [
+              {
+                "url": "https://cdn.transistor.fm/file/transistor/m/shows/20384/c698e69111b441535b74bb6fde4687b0.mp3",
+                "duration": 5,
+                "showCaptions": false,
+                "captions": "",
+                "volume": 1
+              },
+              {
+                "url": "https://cdn.transistor.fm/file/transistor/m/shows/20384/c698e69111b441535b74bb6fde4687b0.mp3",
+                "duration": 5,
+                "showCaptions": false,
+                "captions": "",
+                "volume": 1
+              }
+            ]
+          },
+          "transition": {
+            "type": "object",
+            "title": "The transition Schema",
+            "required": ["enter", "exit", "direction"],
+            "properties": {
+              "enter": {
+                "type": "object",
+                "title": "The enter Schema",
+                "required": ["type", "duration"],
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "title": "The type Schema",
+                    "examples": ["fade"]
+                  },
+                  "duration": {
+                    "type": "integer",
+                    "title": "The duration Schema",
+                    "examples": [2]
+                  }
+                },
+                "examples": [
+                  {
+                    "type": "fade",
+                    "duration": 2
+                  },
+                  {
+                    "type": "fade",
+                    "duration": 2
+                  }
+                ]
+              },
+              "exit": {
+                "type": "object",
+                "title": "The exit Schema",
+                "required": ["type", "duration"],
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "title": "The type Schema",
+                    "examples": ["fade"]
+                  },
+                  "duration": {
+                    "type": "integer",
+                    "title": "The duration Schema",
+                    "examples": [2]
+                  }
+                },
+                "examples": [
+                  {
+                    "type": "fade",
+                    "duration": 2
+                  },
+                  {
+                    "type": "fade",
+                    "duration": 2
+                  }
+                ]
+              },
+              "direction": {
+                "type": "string",
+                "title": "The direction Schema",
+                "examples": ["left"]
+              }
+            },
+            "examples": [
+              {
+                "enter": {
+                  "type": "fade",
+                  "duration": 2
+                },
+                "exit": {
+                  "type": "fade",
+                  "duration": 2
+                },
+                "direction": "left"
+              },
+              {
+                "enter": {
+                  "type": "fade",
+                  "duration": 2
+                },
+                "exit": {
+                  "type": "fade",
+                  "duration": 2
+                },
+                "direction": "left"
+              }
+            ]
+          }
+        },
+        "examples": [
+          {
+            "id": "slide_1",
+            "duration": 3,
+            "background": {
+              "type": "image",
+              "imageUrl": "http://localhost:3005/slide-image?name=flower.png",
+              "videoUrl": "",
+              "hexCode": ""
+            },
+            "layers": [
+              {
+                "type": "text",
+                "id": "slide_1-text_1",
+                "title": "Layer 1",
+                "rotate": -5,
+                "position": {
+                  "x": 10,
+                  "y": 20
+                },
+                "scale": {
+                  "x": 0.1,
+                  "y": 0.2
+                },
+                "transition": {
+                  "enter": {
+                    "type": "fade",
+                    "duration": 2
+                  },
+                  "exit": {
+                    "type": "fade",
+                    "duration": 2
+                  },
+                  "direction": "left"
+                },
+                "style": {
+                  "fill": "black",
+                  "family": "monospace",
+                  "size": 20,
+                  "weight": "800"
+                },
+                "startTime": 2,
+                "endTime": 4
+              },
+              {
+                "type": "text",
+                "id": "slide_1-text_2",
+                "title": "Layer 2",
+                "rotate": -5,
+                "position": {
+                  "x": 10,
+                  "y": 40
+                },
+                "transition": {
+                  "enter": {
+                    "type": "fade",
+                    "duration": 2
+                  },
+                  "exit": {
+                    "type": "fade",
+                    "duration": 2
+                  },
+                  "direction": "left"
+                },
+                "style": {
+                  "fill": "red",
+                  "family": "monospace",
+                  "size": 20,
+                  "weight": "800"
+                },
+                "startTime": 2,
+                "endTime": 4
+              },
+              {
+                "type": "text",
+                "id": "slide_1-text_3",
+                "title": "Layer 3",
+                "rotate": -5,
+                "position": {
+                  "x": 10,
+                  "y": 60
+                },
+                "transition": {
+                  "enter": {
+                    "type": "fade",
+                    "duration": 2
+                  },
+                  "exit": {
+                    "type": "fade",
+                    "duration": 2
+                  },
+                  "direction": "left"
+                },
+                "style": {
+                  "fill": "blue",
+                  "family": "monospace",
+                  "size": 20,
+                  "weight": "800"
+                },
+                "startTime": 2,
+                "endTime": 4
+              },
+              {
+                "type": "text",
+                "id": "slide_1-text_4",
+                "title": "Layer 4",
+                "rotate": -5,
+                "position": {
+                  "x": 10,
+                  "y": 80
+                },
+                "transition": {
+                  "enter": {
+                    "type": "fade",
+                    "duration": 2
+                  },
+                  "exit": {
+                    "type": "fade",
+                    "duration": 2
+                  },
+                  "direction": "left"
+                },
+                "style": {
+                  "fill": "yellow",
+                  "family": "monospace",
+                  "size": 20,
+                  "weight": "800"
+                },
+                "startTime": 2,
+                "endTime": 4
+              }
+            ],
+            "audio": {
+              "url": "https://cdn.transistor.fm/file/transistor/m/shows/20384/c698e69111b441535b74bb6fde4687b0.mp3",
+              "duration": 5,
+              "showCaptions": false,
+              "captions": "",
+              "volume": 1
+            },
+            "transition": {
+              "enter": {
+                "type": "fade",
+                "duration": 2
+              },
+              "exit": {
+                "type": "fade",
+                "duration": 2
+              },
+              "direction": "left"
+            }
+          },
+          {
+            "id": "slide_2",
+            "duration": 5,
+            "background": {
+              "type": "image",
+              "imageUrl": "http://localhost:3005/slide-image?name=autumn.png",
+              "videoUrl": "",
+              "hexCode": ""
+            },
+            "layers": [
+              {
+                "type": "text",
+                "id": "slide_2-text_1",
+                "title": "Layer 1",
+                "rotate": -5,
+                "position": {
+                  "x": 10,
+                  "y": 20
+                },
+                "transition": {
+                  "enter": {
+                    "type": "fade",
+                    "duration": 2
+                  },
+                  "exit": {
+                    "type": "fade",
+                    "duration": 2
+                  },
+                  "direction": "left"
+                },
+                "style": {
+                  "fill": "black",
+                  "family": "monospace",
+                  "size": 20,
+                  "weight": "800"
+                },
+                "startTime": 2,
+                "endTime": 4
+              },
+              {
+                "type": "text",
+                "id": "slide_2-text_2",
+                "title": "Layer 2",
+                "rotate": -5,
+                "position": {
+                  "x": 10,
+                  "y": 40
+                },
+                "transition": {
+                  "enter": {
+                    "type": "fade",
+                    "duration": 2
+                  },
+                  "exit": {
+                    "type": "fade",
+                    "duration": 2
+                  },
+                  "direction": "left"
+                },
+                "style": {
+                  "fill": "red",
+                  "family": "monospace",
+                  "size": 20,
+                  "weight": "800"
+                },
+                "startTime": 2,
+                "endTime": 4
+              },
+              {
+                "type": "text",
+                "id": "slide_2-text_3",
+                "title": "Layer 3",
+                "rotate": -5,
+                "position": {
+                  "x": 10,
+                  "y": 60
+                },
+                "transition": {
+                  "enter": {
+                    "type": "fade",
+                    "duration": 2
+                  },
+                  "exit": {
+                    "type": "fade",
+                    "duration": 2
+                  },
+                  "direction": "left"
+                },
+                "style": {
+                  "fill": "blue",
+                  "family": "monospace",
+                  "size": 20,
+                  "weight": "800"
+                },
+                "startTime": 2,
+                "endTime": 4
+              },
+              {
+                "type": "text",
+                "id": "slide_2-text_4",
+                "title": "Layer 4",
+                "rotate": -5,
+                "position": {
+                  "x": 10,
+                  "y": 80
+                },
+                "transition": {
+                  "enter": {
+                    "type": "fade",
+                    "duration": 2
+                  },
+                  "exit": {
+                    "type": "fade",
+                    "duration": 2
+                  },
+                  "direction": "left"
+                },
+                "style": {
+                  "fill": "yellow",
+                  "family": "monospace",
+                  "size": 20,
+                  "weight": "800"
+                },
+                "startTime": 2,
+                "endTime": 4
+              }
+            ],
+            "audio": {
+              "url": "https://cdn.transistor.fm/file/transistor/m/shows/20384/c698e69111b441535b74bb6fde4687b0.mp3",
+              "duration": 5,
+              "showCaptions": false,
+              "captions": "",
+              "volume": 1
+            },
+            "transition": {
+              "enter": {
+                "type": "fade",
+                "duration": 2
+              },
+              "exit": {
+                "type": "fade",
+                "duration": 2
+              },
+              "direction": "left"
+            }
+          }
+        ]
+      },
+      "examples": [
+        [
+          {
+            "id": "slide_1",
+            "duration": 3,
+            "background": {
+              "type": "image",
+              "imageUrl": "http://localhost:3005/slide-image?name=flower.png",
+              "videoUrl": "",
+              "hexCode": ""
+            },
+            "layers": [
+              {
+                "type": "text",
+                "id": "slide_1-text_1",
+                "title": "Layer 1",
+                "rotate": -5,
+                "position": {
+                  "x": 10,
+                  "y": 20
+                },
+                "scale": {
+                  "x": 0.1,
+                  "y": 0.2
+                },
+                "transition": {
+                  "enter": {
+                    "type": "fade",
+                    "duration": 2
+                  },
+                  "exit": {
+                    "type": "fade",
+                    "duration": 2
+                  },
+                  "direction": "left"
+                },
+                "style": {
+                  "fill": "black",
+                  "family": "monospace",
+                  "size": 20,
+                  "weight": "800"
+                },
+                "startTime": 2,
+                "endTime": 4
+              },
+              {
+                "type": "text",
+                "id": "slide_1-text_2",
+                "title": "Layer 2",
+                "rotate": -5,
+                "position": {
+                  "x": 10,
+                  "y": 40
+                },
+                "transition": {
+                  "enter": {
+                    "type": "fade",
+                    "duration": 2
+                  },
+                  "exit": {
+                    "type": "fade",
+                    "duration": 2
+                  },
+                  "direction": "left"
+                },
+                "style": {
+                  "fill": "red",
+                  "family": "monospace",
+                  "size": 20,
+                  "weight": "800"
+                },
+                "startTime": 2,
+                "endTime": 4
+              },
+              {
+                "type": "text",
+                "id": "slide_1-text_3",
+                "title": "Layer 3",
+                "rotate": -5,
+                "position": {
+                  "x": 10,
+                  "y": 60
+                },
+                "transition": {
+                  "enter": {
+                    "type": "fade",
+                    "duration": 2
+                  },
+                  "exit": {
+                    "type": "fade",
+                    "duration": 2
+                  },
+                  "direction": "left"
+                },
+                "style": {
+                  "fill": "blue",
+                  "family": "monospace",
+                  "size": 20,
+                  "weight": "800"
+                },
+                "startTime": 2,
+                "endTime": 4
+              },
+              {
+                "type": "text",
+                "id": "slide_1-text_4",
+                "title": "Layer 4",
+                "rotate": -5,
+                "position": {
+                  "x": 10,
+                  "y": 80
+                },
+                "transition": {
+                  "enter": {
+                    "type": "fade",
+                    "duration": 2
+                  },
+                  "exit": {
+                    "type": "fade",
+                    "duration": 2
+                  },
+                  "direction": "left"
+                },
+                "style": {
+                  "fill": "yellow",
+                  "family": "monospace",
+                  "size": 20,
+                  "weight": "800"
+                },
+                "startTime": 2,
+                "endTime": 4
+              }
+            ],
+            "audio": {
+              "url": "https://cdn.transistor.fm/file/transistor/m/shows/20384/c698e69111b441535b74bb6fde4687b0.mp3",
+              "duration": 5,
+              "showCaptions": false,
+              "captions": "",
+              "volume": 1
+            },
+            "transition": {
+              "enter": {
+                "type": "fade",
+                "duration": 2
+              },
+              "exit": {
+                "type": "fade",
+                "duration": 2
+              },
+              "direction": "left"
+            }
+          },
+          {
+            "id": "slide_2",
+            "duration": 5,
+            "background": {
+              "type": "image",
+              "imageUrl": "http://localhost:3005/slide-image?name=autumn.png",
+              "videoUrl": "",
+              "hexCode": ""
+            },
+            "layers": [
+              {
+                "type": "text",
+                "id": "slide_2-text_1",
+                "title": "Layer 1",
+                "rotate": -5,
+                "position": {
+                  "x": 10,
+                  "y": 20
+                },
+                "transition": {
+                  "enter": {
+                    "type": "fade",
+                    "duration": 2
+                  },
+                  "exit": {
+                    "type": "fade",
+                    "duration": 2
+                  },
+                  "direction": "left"
+                },
+                "style": {
+                  "fill": "black",
+                  "family": "monospace",
+                  "size": 20,
+                  "weight": "800"
+                },
+                "startTime": 2,
+                "endTime": 4
+              },
+              {
+                "type": "text",
+                "id": "slide_2-text_2",
+                "title": "Layer 2",
+                "rotate": -5,
+                "position": {
+                  "x": 10,
+                  "y": 40
+                },
+                "transition": {
+                  "enter": {
+                    "type": "fade",
+                    "duration": 2
+                  },
+                  "exit": {
+                    "type": "fade",
+                    "duration": 2
+                  },
+                  "direction": "left"
+                },
+                "style": {
+                  "fill": "red",
+                  "family": "monospace",
+                  "size": 20,
+                  "weight": "800"
+                },
+                "startTime": 2,
+                "endTime": 4
+              },
+              {
+                "type": "text",
+                "id": "slide_2-text_3",
+                "title": "Layer 3",
+                "rotate": -5,
+                "position": {
+                  "x": 10,
+                  "y": 60
+                },
+                "transition": {
+                  "enter": {
+                    "type": "fade",
+                    "duration": 2
+                  },
+                  "exit": {
+                    "type": "fade",
+                    "duration": 2
+                  },
+                  "direction": "left"
+                },
+                "style": {
+                  "fill": "blue",
+                  "family": "monospace",
+                  "size": 20,
+                  "weight": "800"
+                },
+                "startTime": 2,
+                "endTime": 4
+              },
+              {
+                "type": "text",
+                "id": "slide_2-text_4",
+                "title": "Layer 4",
+                "rotate": -5,
+                "position": {
+                  "x": 10,
+                  "y": 80
+                },
+                "transition": {
+                  "enter": {
+                    "type": "fade",
+                    "duration": 2
+                  },
+                  "exit": {
+                    "type": "fade",
+                    "duration": 2
+                  },
+                  "direction": "left"
+                },
+                "style": {
+                  "fill": "yellow",
+                  "family": "monospace",
+                  "size": 20,
+                  "weight": "800"
+                },
+                "startTime": 2,
+                "endTime": 4
+              }
+            ],
+            "audio": {
+              "url": "https://cdn.transistor.fm/file/transistor/m/shows/20384/c698e69111b441535b74bb6fde4687b0.mp3",
+              "duration": 5,
+              "showCaptions": false,
+              "captions": "",
+              "volume": 1
+            },
+            "transition": {
+              "enter": {
+                "type": "fade",
+                "duration": 2
+              },
+              "exit": {
+                "type": "fade",
+                "duration": 2
+              },
+              "direction": "left"
+            }
+          }
+        ]
+      ]
+    },
+    "audio": {
+      "type": "object",
+      "default": {},
+      "title": "The audio Schema",
+      "required": ["url", "duration", "showCaptions", "captions", "volume"],
+      "properties": {
+        "url": {
+          "type": "string",
+          "default": "",
+          "title": "The url Schema",
+          "examples": [
+            "https://cdn.transistor.fm/file/transistor/m/shows/20384/c698e69111b441535b74bb6fde4687b0.mp3"
+          ]
+        },
+        "duration": {
+          "type": "integer",
+          "default": 0,
+          "title": "The duration Schema",
+          "examples": [4]
+        },
+        "showCaptions": {
+          "type": "boolean",
+          "default": false,
+          "title": "The showCaptions Schema",
+          "examples": [false]
+        },
+        "captions": {
+          "type": "string",
+          "default": "",
+          "title": "The captions Schema",
+          "examples": [""]
+        },
+        "volume": {
+          "type": "integer",
+          "default": 0,
+          "title": "The volume Schema",
+          "examples": [1]
+        }
+      },
+      "examples": [
+        {
+          "url": "https://cdn.transistor.fm/file/transistor/m/shows/20384/c698e69111b441535b74bb6fde4687b0.mp3",
+          "duration": 4,
+          "showCaptions": false,
+          "captions": "",
+          "volume": 1
+        }
+      ]
+    },
+    "transition": {
+      "type": "object",
+      "default": {},
+      "title": "The transition Schema",
+      "required": ["enter", "exit", "direction"],
+      "properties": {
+        "enter": {
+          "type": "object",
+          "default": {},
+          "title": "The enter Schema",
+          "required": ["type", "duration"],
+          "properties": {
+            "type": {
+              "type": "string",
+              "default": "",
+              "title": "The type Schema",
+              "examples": ["fade"]
+            },
+            "duration": {
+              "type": "integer",
+              "default": 0,
+              "title": "The duration Schema",
+              "examples": [2]
+            }
+          },
+          "examples": [
+            {
+              "type": "fade",
+              "duration": 2
+            }
+          ]
+        },
+        "exit": {
+          "type": "object",
+          "default": {},
+          "title": "The exit Schema",
+          "required": ["type", "duration"],
+          "properties": {
+            "type": {
+              "type": "string",
+              "default": "",
+              "title": "The type Schema",
+              "examples": ["fade"]
+            },
+            "duration": {
+              "type": "integer",
+              "default": 0,
+              "title": "The duration Schema",
+              "examples": [2]
+            }
+          },
+          "examples": [
+            {
+              "type": "fade",
+              "duration": 2
+            }
+          ]
+        },
+        "direction": {
+          "type": "string",
+          "default": "",
+          "title": "The direction Schema",
+          "examples": ["left"]
+        }
+      },
+      "examples": [
+        {
+          "enter": {
+            "type": "fade",
+            "duration": 2
+          },
+          "exit": {
+            "type": "fade",
+            "duration": 2
+          },
+          "direction": "left"
+        }
+      ]
+    }
+  },
+  "examples": [
+    {
+      "id": "video_1",
+      "aspectRatio": "16:9",
+      "thumbnail": "flower.png",
+      "slides": [
+        {
+          "id": "slide_1",
+          "duration": 3,
+          "background": {
+            "type": "image",
+            "imageUrl": "http://localhost:3005/slide-image?name=flower.png",
+            "videoUrl": "",
+            "hexCode": ""
+          },
+          "layers": [
+            {
+              "type": "text",
+              "id": "slide_1-text_1",
+              "title": "Layer 1",
+              "rotate": -5,
+              "position": {
+                "x": 10,
+                "y": 20
+              },
+              "scale": {
+                "x": 0.1,
+                "y": 0.2
+              },
+              "transition": {
+                "enter": {
+                  "type": "fade",
+                  "duration": 2
+                },
+                "exit": {
+                  "type": "fade",
+                  "duration": 2
+                },
+                "direction": "left"
+              },
+              "style": {
+                "fill": "black",
+                "family": "monospace",
+                "size": 20,
+                "weight": "800"
+              },
+              "startTime": 2,
+              "endTime": 4
+            },
+            {
+              "type": "text",
+              "id": "slide_1-text_2",
+              "title": "Layer 2",
+              "rotate": -5,
+              "position": {
+                "x": 10,
+                "y": 40
+              },
+              "transition": {
+                "enter": {
+                  "type": "fade",
+                  "duration": 2
+                },
+                "exit": {
+                  "type": "fade",
+                  "duration": 2
+                },
+                "direction": "left"
+              },
+              "style": {
+                "fill": "red",
+                "family": "monospace",
+                "size": 20,
+                "weight": "800"
+              },
+              "startTime": 2,
+              "endTime": 4
+            },
+            {
+              "type": "text",
+              "id": "slide_1-text_3",
+              "title": "Layer 3",
+              "rotate": -5,
+              "position": {
+                "x": 10,
+                "y": 60
+              },
+              "transition": {
+                "enter": {
+                  "type": "fade",
+                  "duration": 2
+                },
+                "exit": {
+                  "type": "fade",
+                  "duration": 2
+                },
+                "direction": "left"
+              },
+              "style": {
+                "fill": "blue",
+                "family": "monospace",
+                "size": 20,
+                "weight": "800"
+              },
+              "startTime": 2,
+              "endTime": 4
+            },
+            {
+              "type": "text",
+              "id": "slide_1-text_4",
+              "title": "Layer 4",
+              "rotate": -5,
+              "position": {
+                "x": 10,
+                "y": 80
+              },
+              "transition": {
+                "enter": {
+                  "type": "fade",
+                  "duration": 2
+                },
+                "exit": {
+                  "type": "fade",
+                  "duration": 2
+                },
+                "direction": "left"
+              },
+              "style": {
+                "fill": "yellow",
+                "family": "monospace",
+                "size": 20,
+                "weight": "800"
+              },
+              "startTime": 2,
+              "endTime": 4
+            }
+          ],
+          "audio": {
+            "url": "https://cdn.transistor.fm/file/transistor/m/shows/20384/c698e69111b441535b74bb6fde4687b0.mp3",
+            "duration": 5,
+            "showCaptions": false,
+            "captions": "",
+            "volume": 1
+          },
+          "transition": {
+            "enter": {
+              "type": "fade",
+              "duration": 2
+            },
+            "exit": {
+              "type": "fade",
+              "duration": 2
+            },
+            "direction": "left"
+          }
+        },
+        {
+          "id": "slide_2",
+          "duration": 5,
+          "background": {
+            "type": "image",
+            "imageUrl": "http://localhost:3005/slide-image?name=autumn.png",
+            "videoUrl": "",
+            "hexCode": ""
+          },
+          "layers": [
+            {
+              "type": "text",
+              "id": "slide_2-text_1",
+              "title": "Layer 1",
+              "rotate": -5,
+              "position": {
+                "x": 10,
+                "y": 20
+              },
+              "transition": {
+                "enter": {
+                  "type": "fade",
+                  "duration": 2
+                },
+                "exit": {
+                  "type": "fade",
+                  "duration": 2
+                },
+                "direction": "left"
+              },
+              "style": {
+                "fill": "black",
+                "family": "monospace",
+                "size": 20,
+                "weight": "800"
+              },
+              "startTime": 2,
+              "endTime": 4
+            },
+            {
+              "type": "text",
+              "id": "slide_2-text_2",
+              "title": "Layer 2",
+              "rotate": -5,
+              "position": {
+                "x": 10,
+                "y": 40
+              },
+              "transition": {
+                "enter": {
+                  "type": "fade",
+                  "duration": 2
+                },
+                "exit": {
+                  "type": "fade",
+                  "duration": 2
+                },
+                "direction": "left"
+              },
+              "style": {
+                "fill": "red",
+                "family": "monospace",
+                "size": 20,
+                "weight": "800"
+              },
+              "startTime": 2,
+              "endTime": 4
+            },
+            {
+              "type": "text",
+              "id": "slide_2-text_3",
+              "title": "Layer 3",
+              "rotate": -5,
+              "position": {
+                "x": 10,
+                "y": 60
+              },
+              "transition": {
+                "enter": {
+                  "type": "fade",
+                  "duration": 2
+                },
+                "exit": {
+                  "type": "fade",
+                  "duration": 2
+                },
+                "direction": "left"
+              },
+              "style": {
+                "fill": "blue",
+                "family": "monospace",
+                "size": 20,
+                "weight": "800"
+              },
+              "startTime": 2,
+              "endTime": 4
+            },
+            {
+              "type": "text",
+              "id": "slide_2-text_4",
+              "title": "Layer 4",
+              "rotate": -5,
+              "position": {
+                "x": 10,
+                "y": 80
+              },
+              "transition": {
+                "enter": {
+                  "type": "fade",
+                  "duration": 2
+                },
+                "exit": {
+                  "type": "fade",
+                  "duration": 2
+                },
+                "direction": "left"
+              },
+              "style": {
+                "fill": "yellow",
+                "family": "monospace",
+                "size": 20,
+                "weight": "800"
+              },
+              "startTime": 2,
+              "endTime": 4
+            }
+          ],
+          "audio": {
+            "url": "https://cdn.transistor.fm/file/transistor/m/shows/20384/c698e69111b441535b74bb6fde4687b0.mp3",
+            "duration": 5,
+            "showCaptions": false,
+            "captions": "",
+            "volume": 1
+          },
+          "transition": {
+            "enter": {
+              "type": "fade",
+              "duration": 2
+            },
+            "exit": {
+              "type": "fade",
+              "duration": 2
+            },
+            "direction": "left"
+          }
+        }
+      ],
+      "audio": {
+        "url": "https://cdn.transistor.fm/file/transistor/m/shows/20384/c698e69111b441535b74bb6fde4687b0.mp3",
+        "duration": 4,
+        "showCaptions": false,
+        "captions": "",
+        "volume": 1
+      },
+      "transition": {
+        "enter": {
+          "type": "fade",
+          "duration": 2
+        },
+        "exit": {
+          "type": "fade",
+          "duration": 2
+        },
+        "direction": "left"
+      }
+    }
+  ]
+}
