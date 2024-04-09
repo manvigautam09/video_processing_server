@@ -418,35 +418,35 @@
                       "examples": [
                         {
                           "type": "fade",
-                          "duration": 2
+                          "duration": 2000
                         },
                         {
                           "type": "fade",
-                          "duration": 2
+                          "duration": 2000
                         },
                         {
                           "type": "fade",
-                          "duration": 2
+                          "duration": 2000
                         },
                         {
                           "type": "fade",
-                          "duration": 2
+                          "duration": 2000
                         },
                         {
                           "type": "fade",
-                          "duration": 2
+                          "duration": 2000
                         },
                         {
                           "type": "fade",
-                          "duration": 2
+                          "duration": 2000
                         },
                         {
                           "type": "fade",
-                          "duration": 2
+                          "duration": 2000
                         },
                         {
                           "type": "fade",
-                          "duration": 2
+                          "duration": 2000
                         }
                       ]
                     },
@@ -469,35 +469,35 @@
                       "examples": [
                         {
                           "type": "fade",
-                          "duration": 2
+                          "duration": 2000
                         },
                         {
                           "type": "fade",
-                          "duration": 2
+                          "duration": 2000
                         },
                         {
                           "type": "fade",
-                          "duration": 2
+                          "duration": 2000
                         },
                         {
                           "type": "fade",
-                          "duration": 2
+                          "duration": 2000
                         },
                         {
                           "type": "fade",
-                          "duration": 2
+                          "duration": 2000
                         },
                         {
                           "type": "fade",
-                          "duration": 2
+                          "duration": 2000
                         },
                         {
                           "type": "fade",
-                          "duration": 2
+                          "duration": 2000
                         },
                         {
                           "type": "fade",
-                          "duration": 2
+                          "duration": 2000
                         }
                       ]
                     },
@@ -511,88 +511,88 @@
                     {
                       "enter": {
                         "type": "fade",
-                        "duration": 2
+                        "duration": 2000
                       },
                       "exit": {
                         "type": "fade",
-                        "duration": 2
+                        "duration": 2000
                       },
                       "direction": "left"
                     },
                     {
                       "enter": {
                         "type": "fade",
-                        "duration": 2
+                        "duration": 2000
                       },
                       "exit": {
                         "type": "fade",
-                        "duration": 2
+                        "duration": 2000
                       },
                       "direction": "left"
                     },
                     {
                       "enter": {
                         "type": "fade",
-                        "duration": 2
+                        "duration": 2000
                       },
                       "exit": {
                         "type": "fade",
-                        "duration": 2
+                        "duration": 2000
                       },
                       "direction": "left"
                     },
                     {
                       "enter": {
                         "type": "fade",
-                        "duration": 2
+                        "duration": 2000
                       },
                       "exit": {
                         "type": "fade",
-                        "duration": 2
+                        "duration": 2000
                       },
                       "direction": "left"
                     },
                     {
                       "enter": {
                         "type": "fade",
-                        "duration": 2
+                        "duration": 2000
                       },
                       "exit": {
                         "type": "fade",
-                        "duration": 2
+                        "duration": 2000
                       },
                       "direction": "left"
                     },
                     {
                       "enter": {
                         "type": "fade",
-                        "duration": 2
+                        "duration": 2000
                       },
                       "exit": {
                         "type": "fade",
-                        "duration": 2
+                        "duration": 2000
                       },
                       "direction": "left"
                     },
                     {
                       "enter": {
                         "type": "fade",
-                        "duration": 2
+                        "duration": 2000
                       },
                       "exit": {
                         "type": "fade",
-                        "duration": 2
+                        "duration": 2000
                       },
                       "direction": "left"
                     },
                     {
                       "enter": {
                         "type": "fade",
-                        "duration": 2
+                        "duration": 2000
                       },
                       "exit": {
                         "type": "fade",
-                        "duration": 2
+                        "duration": 2000
                       },
                       "direction": "left"
                     }
@@ -765,17 +765,17 @@
                   "transition": {
                     "enter": {
                       "type": "fade",
-                      "duration": 2
+                      "duration": 2000
                     },
                     "exit": {
                       "type": "fade",
-                      "duration": 2
+                      "duration": 2000
                     },
                     "direction": "left"
                   },
                   "animation": {
                     "type": "bounce",
-                    "duration": 2
+                    "duration": 2000
                   },
                   "style": {
                     "fill": "black",
@@ -798,11 +798,11 @@
                   "transition": {
                     "enter": {
                       "type": "fade",
-                      "duration": 2
+                      "duration": 2000
                     },
                     "exit": {
                       "type": "fade",
-                      "duration": 2
+                      "duration": 2000
                     },
                     "direction": "left"
                   },
@@ -827,11 +827,11 @@
                   "transition": {
                     "enter": {
                       "type": "fade",
-                      "duration": 2
+                      "duration": 2000
                     },
                     "exit": {
                       "type": "fade",
-                      "duration": 2
+                      "duration": 2000
                     },
                     "direction": "left"
                   },
@@ -856,11 +856,11 @@
                   "transition": {
                     "enter": {
                       "type": "fade",
-                      "duration": 2
+                      "duration": 2000
                     },
                     "exit": {
                       "type": "fade",
-                      "duration": 2
+                      "duration": 2000
                     },
                     "direction": "left"
                   },
@@ -885,11 +885,11 @@
                   "transition": {
                     "enter": {
                       "type": "fade",
-                      "duration": 2
+                      "duration": 2000
                     },
                     "exit": {
                       "type": "fade",
-                      "duration": 2
+                      "duration": 2000
                     },
                     "direction": "left"
                   },
@@ -914,11 +914,11 @@
                   "transition": {
                     "enter": {
                       "type": "fade",
-                      "duration": 2
+                      "duration": 2000
                     },
                     "exit": {
                       "type": "fade",
-                      "duration": 2
+                      "duration": 2000
                     },
                     "direction": "left"
                   },
@@ -943,11 +943,11 @@
                   "transition": {
                     "enter": {
                       "type": "fade",
-                      "duration": 2
+                      "duration": 2000
                     },
                     "exit": {
                       "type": "fade",
-                      "duration": 2
+                      "duration": 2000
                     },
                     "direction": "left"
                   },
@@ -972,11 +972,11 @@
                   "transition": {
                     "enter": {
                       "type": "fade",
-                      "duration": 2
+                      "duration": 2000
                     },
                     "exit": {
                       "type": "fade",
-                      "duration": 2
+                      "duration": 2000
                     },
                     "direction": "left"
                   },
@@ -1009,17 +1009,17 @@
                   "transition": {
                     "enter": {
                       "type": "fade",
-                      "duration": 2
+                      "duration": 2000
                     },
                     "exit": {
                       "type": "fade",
-                      "duration": 2
+                      "duration": 2000
                     },
                     "direction": "left"
                   },
                   "animation": {
                     "type": "bounce",
-                    "duration": 2
+                    "duration": 2000
                   },
                   "style": {
                     "fill": "black",
@@ -1042,11 +1042,11 @@
                   "transition": {
                     "enter": {
                       "type": "fade",
-                      "duration": 2
+                      "duration": 2000
                     },
                     "exit": {
                       "type": "fade",
-                      "duration": 2
+                      "duration": 2000
                     },
                     "direction": "left"
                   },
@@ -1071,11 +1071,11 @@
                   "transition": {
                     "enter": {
                       "type": "fade",
-                      "duration": 2
+                      "duration": 2000
                     },
                     "exit": {
                       "type": "fade",
-                      "duration": 2
+                      "duration": 2000
                     },
                     "direction": "left"
                   },
@@ -1100,11 +1100,11 @@
                   "transition": {
                     "enter": {
                       "type": "fade",
-                      "duration": 2
+                      "duration": 2000
                     },
                     "exit": {
                       "type": "fade",
-                      "duration": 2
+                      "duration": 2000
                     },
                     "direction": "left"
                   },
@@ -1131,11 +1131,11 @@
                   "transition": {
                     "enter": {
                       "type": "fade",
-                      "duration": 2
+                      "duration": 2000
                     },
                     "exit": {
                       "type": "fade",
-                      "duration": 2
+                      "duration": 2000
                     },
                     "direction": "left"
                   },
@@ -1160,11 +1160,11 @@
                   "transition": {
                     "enter": {
                       "type": "fade",
-                      "duration": 2
+                      "duration": 2000
                     },
                     "exit": {
                       "type": "fade",
-                      "duration": 2
+                      "duration": 2000
                     },
                     "direction": "left"
                   },
@@ -1189,11 +1189,11 @@
                   "transition": {
                     "enter": {
                       "type": "fade",
-                      "duration": 2
+                      "duration": 2000
                     },
                     "exit": {
                       "type": "fade",
-                      "duration": 2
+                      "duration": 2000
                     },
                     "direction": "left"
                   },
@@ -1218,11 +1218,11 @@
                   "transition": {
                     "enter": {
                       "type": "fade",
-                      "duration": 2
+                      "duration": 2000
                     },
                     "exit": {
                       "type": "fade",
-                      "duration": 2
+                      "duration": 2000
                     },
                     "direction": "left"
                   },
@@ -1318,11 +1318,11 @@
                 "examples": [
                   {
                     "type": "fade",
-                    "duration": 2
+                    "duration": 2000
                   },
                   {
                     "type": "fade",
-                    "duration": 2
+                    "duration": 2000
                   }
                 ]
               },
@@ -1345,11 +1345,11 @@
                 "examples": [
                   {
                     "type": "fade",
-                    "duration": 2
+                    "duration": 2000
                   },
                   {
                     "type": "fade",
-                    "duration": 2
+                    "duration": 2000
                   }
                 ]
               },
@@ -1363,22 +1363,22 @@
               {
                 "enter": {
                   "type": "fade",
-                  "duration": 2
+                  "duration": 2000
                 },
                 "exit": {
                   "type": "fade",
-                  "duration": 2
+                  "duration": 2000
                 },
                 "direction": "left"
               },
               {
                 "enter": {
                   "type": "fade",
-                  "duration": 2
+                  "duration": 2000
                 },
                 "exit": {
                   "type": "fade",
-                  "duration": 2
+                  "duration": 2000
                 },
                 "direction": "left"
               }
@@ -1428,17 +1428,17 @@
                 "transition": {
                   "enter": {
                     "type": "fade",
-                    "duration": 2
+                    "duration": 2000
                   },
                   "exit": {
                     "type": "fade",
-                    "duration": 2
+                    "duration": 2000
                   },
                   "direction": "left"
                 },
                 "animation": {
                   "type": "bounce",
-                  "duration": 2
+                  "duration": 2000
                 },
                 "style": {
                   "fill": "black",
@@ -1461,11 +1461,11 @@
                 "transition": {
                   "enter": {
                     "type": "fade",
-                    "duration": 2
+                    "duration": 2000
                   },
                   "exit": {
                     "type": "fade",
-                    "duration": 2
+                    "duration": 2000
                   },
                   "direction": "left"
                 },
@@ -1490,11 +1490,11 @@
                 "transition": {
                   "enter": {
                     "type": "fade",
-                    "duration": 2
+                    "duration": 2000
                   },
                   "exit": {
                     "type": "fade",
-                    "duration": 2
+                    "duration": 2000
                   },
                   "direction": "left"
                 },
@@ -1519,11 +1519,11 @@
                 "transition": {
                   "enter": {
                     "type": "fade",
-                    "duration": 2
+                    "duration": 2000
                   },
                   "exit": {
                     "type": "fade",
-                    "duration": 2
+                    "duration": 2000
                   },
                   "direction": "left"
                 },
@@ -1547,11 +1547,11 @@
             "transition": {
               "enter": {
                 "type": "fade",
-                "duration": 2
+                "duration": 2000
               },
               "exit": {
                 "type": "fade",
-                "duration": 2
+                "duration": 2000
               },
               "direction": "left"
             }
@@ -1594,11 +1594,11 @@
                 "transition": {
                   "enter": {
                     "type": "fade",
-                    "duration": 2
+                    "duration": 2000
                   },
                   "exit": {
                     "type": "fade",
-                    "duration": 2
+                    "duration": 2000
                   },
                   "direction": "left"
                 },
@@ -1623,11 +1623,11 @@
                 "transition": {
                   "enter": {
                     "type": "fade",
-                    "duration": 2
+                    "duration": 2000
                   },
                   "exit": {
                     "type": "fade",
-                    "duration": 2
+                    "duration": 2000
                   },
                   "direction": "left"
                 },
@@ -1652,11 +1652,11 @@
                 "transition": {
                   "enter": {
                     "type": "fade",
-                    "duration": 2
+                    "duration": 2000
                   },
                   "exit": {
                     "type": "fade",
-                    "duration": 2
+                    "duration": 2000
                   },
                   "direction": "left"
                 },
@@ -1681,11 +1681,11 @@
                 "transition": {
                   "enter": {
                     "type": "fade",
-                    "duration": 2
+                    "duration": 2000
                   },
                   "exit": {
                     "type": "fade",
-                    "duration": 2
+                    "duration": 2000
                   },
                   "direction": "left"
                 },
@@ -1709,11 +1709,11 @@
             "transition": {
               "enter": {
                 "type": "fade",
-                "duration": 2
+                "duration": 2000
               },
               "exit": {
                 "type": "fade",
-                "duration": 2
+                "duration": 2000
               },
               "direction": "left"
             }
@@ -1764,17 +1764,17 @@
                 "transition": {
                   "enter": {
                     "type": "fade",
-                    "duration": 2
+                    "duration": 2000
                   },
                   "exit": {
                     "type": "fade",
-                    "duration": 2
+                    "duration": 2000
                   },
                   "direction": "left"
                 },
                 "animation": {
                   "type": "bounce",
-                  "duration": 2
+                  "duration": 2000
                 },
                 "style": {
                   "fill": "black",
@@ -1797,11 +1797,11 @@
                 "transition": {
                   "enter": {
                     "type": "fade",
-                    "duration": 2
+                    "duration": 2000
                   },
                   "exit": {
                     "type": "fade",
-                    "duration": 2
+                    "duration": 2000
                   },
                   "direction": "left"
                 },
@@ -1826,11 +1826,11 @@
                 "transition": {
                   "enter": {
                     "type": "fade",
-                    "duration": 2
+                    "duration": 2000
                   },
                   "exit": {
                     "type": "fade",
-                    "duration": 2
+                    "duration": 2000
                   },
                   "direction": "left"
                 },
@@ -1855,11 +1855,11 @@
                 "transition": {
                   "enter": {
                     "type": "fade",
-                    "duration": 2
+                    "duration": 2000
                   },
                   "exit": {
                     "type": "fade",
-                    "duration": 2
+                    "duration": 2000
                   },
                   "direction": "left"
                 },
@@ -1883,11 +1883,11 @@
             "transition": {
               "enter": {
                 "type": "fade",
-                "duration": 2
+                "duration": 2000
               },
               "exit": {
                 "type": "fade",
-                "duration": 2
+                "duration": 2000
               },
               "direction": "left"
             }
@@ -1930,11 +1930,11 @@
                 "transition": {
                   "enter": {
                     "type": "fade",
-                    "duration": 2
+                    "duration": 2000
                   },
                   "exit": {
                     "type": "fade",
-                    "duration": 2
+                    "duration": 2000
                   },
                   "direction": "left"
                 },
@@ -1959,11 +1959,11 @@
                 "transition": {
                   "enter": {
                     "type": "fade",
-                    "duration": 2
+                    "duration": 2000
                   },
                   "exit": {
                     "type": "fade",
-                    "duration": 2
+                    "duration": 2000
                   },
                   "direction": "left"
                 },
@@ -1988,11 +1988,11 @@
                 "transition": {
                   "enter": {
                     "type": "fade",
-                    "duration": 2
+                    "duration": 2000
                   },
                   "exit": {
                     "type": "fade",
-                    "duration": 2
+                    "duration": 2000
                   },
                   "direction": "left"
                 },
@@ -2017,11 +2017,11 @@
                 "transition": {
                   "enter": {
                     "type": "fade",
-                    "duration": 2
+                    "duration": 2000
                   },
                   "exit": {
                     "type": "fade",
-                    "duration": 2
+                    "duration": 2000
                   },
                   "direction": "left"
                 },
@@ -2045,11 +2045,11 @@
             "transition": {
               "enter": {
                 "type": "fade",
-                "duration": 2
+                "duration": 2000
               },
               "exit": {
                 "type": "fade",
-                "duration": 2
+                "duration": 2000
               },
               "direction": "left"
             }
@@ -2134,7 +2134,7 @@
           "examples": [
             {
               "type": "fade",
-              "duration": 2
+              "duration": 2000
             }
           ]
         },
@@ -2160,7 +2160,7 @@
           "examples": [
             {
               "type": "fade",
-              "duration": 2
+              "duration": 2000
             }
           ]
         },
@@ -2175,11 +2175,11 @@
         {
           "enter": {
             "type": "fade",
-            "duration": 2
+            "duration": 2000
           },
           "exit": {
             "type": "fade",
-            "duration": 2
+            "duration": 2000
           },
           "direction": "left"
         }
@@ -2234,17 +2234,17 @@
               "transition": {
                 "enter": {
                   "type": "fade",
-                  "duration": 2
+                  "duration": 2000
                 },
                 "exit": {
                   "type": "fade",
-                  "duration": 2
+                  "duration": 2000
                 },
                 "direction": "left"
               },
               "animation": {
                 "type": "bounce",
-                "duration": 2
+                "duration": 2000
               },
               "style": {
                 "fill": "black",
@@ -2267,11 +2267,11 @@
               "transition": {
                 "enter": {
                   "type": "fade",
-                  "duration": 2
+                  "duration": 2000
                 },
                 "exit": {
                   "type": "fade",
-                  "duration": 2
+                  "duration": 2000
                 },
                 "direction": "left"
               },
@@ -2296,11 +2296,11 @@
               "transition": {
                 "enter": {
                   "type": "fade",
-                  "duration": 2
+                  "duration": 2000
                 },
                 "exit": {
                   "type": "fade",
-                  "duration": 2
+                  "duration": 2000
                 },
                 "direction": "left"
               },
@@ -2325,11 +2325,11 @@
               "transition": {
                 "enter": {
                   "type": "fade",
-                  "duration": 2
+                  "duration": 2000
                 },
                 "exit": {
                   "type": "fade",
-                  "duration": 2
+                  "duration": 2000
                 },
                 "direction": "left"
               },
@@ -2353,11 +2353,11 @@
           "transition": {
             "enter": {
               "type": "fade",
-              "duration": 2
+              "duration": 2000
             },
             "exit": {
               "type": "fade",
-              "duration": 2
+              "duration": 2000
             },
             "direction": "left"
           }
@@ -2400,11 +2400,11 @@
               "transition": {
                 "enter": {
                   "type": "fade",
-                  "duration": 2
+                  "duration": 2000
                 },
                 "exit": {
                   "type": "fade",
-                  "duration": 2
+                  "duration": 2000
                 },
                 "direction": "left"
               },
@@ -2429,11 +2429,11 @@
               "transition": {
                 "enter": {
                   "type": "fade",
-                  "duration": 2
+                  "duration": 2000
                 },
                 "exit": {
                   "type": "fade",
-                  "duration": 2
+                  "duration": 2000
                 },
                 "direction": "left"
               },
@@ -2458,11 +2458,11 @@
               "transition": {
                 "enter": {
                   "type": "fade",
-                  "duration": 2
+                  "duration": 2000
                 },
                 "exit": {
                   "type": "fade",
-                  "duration": 2
+                  "duration": 2000
                 },
                 "direction": "left"
               },
@@ -2487,11 +2487,11 @@
               "transition": {
                 "enter": {
                   "type": "fade",
-                  "duration": 2
+                  "duration": 2000
                 },
                 "exit": {
                   "type": "fade",
-                  "duration": 2
+                  "duration": 2000
                 },
                 "direction": "left"
               },
@@ -2515,11 +2515,11 @@
           "transition": {
             "enter": {
               "type": "fade",
-              "duration": 2
+              "duration": 2000
             },
             "exit": {
               "type": "fade",
-              "duration": 2
+              "duration": 2000
             },
             "direction": "left"
           }
@@ -2535,11 +2535,11 @@
       "transition": {
         "enter": {
           "type": "fade",
-          "duration": 2
+          "duration": 2000
         },
         "exit": {
           "type": "fade",
-          "duration": 2
+          "duration": 2000
         },
         "direction": "left"
       }
