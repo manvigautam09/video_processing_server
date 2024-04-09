@@ -47,10 +47,20 @@
             "exit": { "type": "fade", "duration": 2 },
             "direction": "left"
           },
-          "animation": {
-            "type": "bounce",
-            "duration": 2
-          },
+          "animation": [
+            {
+              "type": "bounce",
+              "duration": 2000,
+              "repeat": 1,
+              "delay": 1000
+            },
+            {
+              "type": "bounce",
+              "duration": 2000,
+              "repeat": 1,
+              "delay": 1000
+            }
+          ],
           "style": {
             "fill": "black",
             "family": "monospace",
@@ -58,7 +68,7 @@
             "weight": "800"
           },
           "startTime": 2,
-          "endTime": 4
+          "endTime": 10
         },
         {
           "type": "text",

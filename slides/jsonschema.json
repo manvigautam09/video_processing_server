@@ -599,29 +599,65 @@
                   ]
                 },
                 "animation": {
-                  "type": "object",
-                  "default": {},
+                  "type": "array",
+                  "default": [],
                   "title": "The animation Schema",
-                  "required": ["type", "duration"],
-                  "properties": {
-                    "type": {
-                      "type": "string",
-                      "default": "",
-                      "title": "The type Schema",
-                      "examples": ["bounce"]
+                  "items": {
+                    "type": "object",
+                    "title": "A Schema",
+                    "required": ["type", "duration", "repeat", "delay"],
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "title": "The type Schema",
+                        "examples": ["bounce"]
+                      },
+                      "duration": {
+                        "type": "integer",
+                        "title": "The duration Schema",
+                        "examples": [2000]
+                      },
+                      "repeat": {
+                        "type": "integer",
+                        "title": "The repeat Schema",
+                        "examples": [1]
+                      },
+                      "delay": {
+                        "type": "integer",
+                        "title": "The delay Schema",
+                        "examples": [1000]
+                      }
                     },
-                    "duration": {
-                      "type": "integer",
-                      "default": 0,
-                      "title": "The duration Schema",
-                      "examples": [2]
-                    }
+                    "examples": [
+                      {
+                        "type": "bounce",
+                        "duration": 2000,
+                        "repeat": 1,
+                        "delay": 1000
+                      },
+                      {
+                        "type": "bounce",
+                        "duration": 2000,
+                        "repeat": 1,
+                        "delay": 1000
+                      }
+                    ]
                   },
                   "examples": [
-                    {
-                      "type": "bounce",
-                      "duration": 2
-                    }
+                    [
+                      {
+                        "type": "bounce",
+                        "duration": 2000,
+                        "repeat": 1,
+                        "delay": 1000
+                      },
+                      {
+                        "type": "bounce",
+                        "duration": 2000,
+                        "repeat": 1,
+                        "delay": 1000
+                      }
+                    ]
                   ]
                 },
                 "style": {
