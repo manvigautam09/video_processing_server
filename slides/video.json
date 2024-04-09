@@ -43,8 +43,8 @@
             "y": 0.2
           },
           "transition": {
-            "enter": { "type": "fade", "duration": 2 },
-            "exit": { "type": "fade", "duration": 2 },
+            "enter": { "type": "fade", "duration": 2000 },
+            "exit": { "type": "fade", "duration": 2000 },
             "direction": "left"
           },
           "animation": [
@@ -67,8 +67,8 @@
             "size": 20,
             "weight": "800"
           },
-          "startTime": 2,
-          "endTime": 10
+          "startTime": 2000,
+          "endTime": 10000
         },
         {
           "type": "text",
@@ -80,8 +80,8 @@
             "y": 40
           },
           "transition": {
-            "enter": { "type": "fade", "duration": 2 },
-            "exit": { "type": "fade", "duration": 2 },
+            "enter": { "type": "fade", "duration": 2000 },
+            "exit": { "type": "fade", "duration": 2000 },
             "direction": "left"
           },
           "style": {
@@ -103,8 +103,8 @@
             "y": 60
           },
           "transition": {
-            "enter": { "type": "fade", "duration": 2 },
-            "exit": { "type": "fade", "duration": 2 },
+            "enter": { "type": "fade", "duration": 2000 },
+            "exit": { "type": "fade", "duration": 2000 },
             "direction": "left"
           },
           "style": {
@@ -126,8 +126,8 @@
             "y": 80
           },
           "transition": {
-            "enter": { "type": "fade", "duration": 2 },
-            "exit": { "type": "fade", "duration": 2 },
+            "enter": { "type": "fade", "duration": 2000 },
+            "exit": { "type": "fade", "duration": 2000 },
             "direction": "left"
           },
           "style": {
@@ -148,8 +148,8 @@
         "volume": 1
       },
       "transition": {
-        "enter": { "type": "fade", "duration": 2 },
-        "exit": { "type": "fade", "duration": 2 },
+        "enter": { "type": "fade", "duration": 2000 },
+        "exit": { "type": "fade", "duration": 2000 },
         "direction": "left"
       }
     },
@@ -189,8 +189,8 @@
             "y": 20
           },
           "transition": {
-            "enter": { "type": "fade", "duration": 2 },
-            "exit": { "type": "fade", "duration": 2 },
+            "enter": { "type": "fade", "duration": 2000 },
+            "exit": { "type": "fade", "duration": 2000 },
             "direction": "left"
           },
           "style": {
@@ -212,8 +212,8 @@
             "y": 40
           },
           "transition": {
-            "enter": { "type": "fade", "duration": 2 },
-            "exit": { "type": "fade", "duration": 2 },
+            "enter": { "type": "fade", "duration": 2000 },
+            "exit": { "type": "fade", "duration": 2000 },
             "direction": "left"
           },
           "style": {
@@ -235,8 +235,8 @@
             "y": 60
           },
           "transition": {
-            "enter": { "type": "fade", "duration": 2 },
-            "exit": { "type": "fade", "duration": 2 },
+            "enter": { "type": "fade", "duration": 2000 },
+            "exit": { "type": "fade", "duration": 2000 },
             "direction": "left"
           },
           "style": {
@@ -258,8 +258,8 @@
             "y": 80
           },
           "transition": {
-            "enter": { "type": "fade", "duration": 2 },
-            "exit": { "type": "fade", "duration": 2 },
+            "enter": { "type": "fade", "duration": 2000 },
+            "exit": { "type": "fade", "duration": 2000 },
             "direction": "left"
           },
           "style": {
@@ -280,8 +280,8 @@
         "volume": 1
       },
       "transition": {
-        "enter": { "type": "fade", "duration": 2 },
-        "exit": { "type": "fade", "duration": 2 },
+        "enter": { "type": "fade", "duration": 2000 },
+        "exit": { "type": "fade", "duration": 2000 },
         "direction": "left"
       }
     }
@@ -294,8 +294,8 @@
     "volume": 1
   },
   "transition": {
-    "enter": { "type": "fade", "duration": 2 },
-    "exit": { "type": "fade", "duration": 2 },
+    "enter": { "type": "fade", "duration": 2000 },
+    "exit": { "type": "fade", "duration": 2000 },
     "direction": "left"
   }
 }
